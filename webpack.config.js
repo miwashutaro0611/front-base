@@ -4,6 +4,7 @@ const buildDir = path.resolve(__dirname, 'dist')
 
 module.exports = {
 	context: appDir,
+  mode: 'production',
 
 	entry: {
     bundle: './assets/js/common.js',

@@ -1,7 +1,12 @@
 const gulp = require("gulp")
 const pug = require('gulp-pug')
+const stylus = require('gulp-stylus')
+const postcss = require('gulp-postcss')
+const cssnext = require('postcss-cssnext')
 const plumber = require('gulp-plumber')
 const notify = require("gulp-notify")
+const sourcemaps = require('gulp-sourcemaps')
+const minifyCss  = require('gulp-minify-css')
 const browserSync = require('browser-sync')
 const webpackStream = require("webpack-stream")
 const webpack = require("webpack")
@@ -10,7 +15,7 @@ const webpackConfig = require("./webpack.config")
 
 const src = {
   'html': ['src/pages/*.pug', '!' + 'src/**/_*.pug'],
-  'stylus': 'src/**/*.styl',
+  'stylus': 'src/assets/stylus/*.styl',
   'js': 'src/**/*.js',
   'json': 'src/posts/',
   'image': 'src/assets/img/**/*',
@@ -54,16 +59,46 @@ const browsers = [
   'Android >= 5' //Android Browserは5以上
 ];
 
+// cssファイルをdestディレクトリに出力（コピー）します。
+gulp.task('css', function() {
+  return gulp.src(src.css, {base: src.root})
+    .pipe(gulp.dest(dest.root))
+    .pipe(browserSync.reload({stream: true}))
+});
+
+// gulp stylus で実行するタスク
+gulp.task('stylus', function () {
+  gulp.src(src.stylus)
+    .pipe(sourcemaps.init())
+    .pipe(plumber({errorHandler: notify.onError("エラーです。")}))
+    // .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+    .pipe(stylus())
+    .pipe(postcss([cssnext(browsers)]))
+    .pipe(minifyCss({advanced:false}))
+    .pipe(sourcemaps.write('../maps/'))
+    .pipe(gulp.dest(dest.root + 'assets/css/'))
+    .pipe(browserSync.reload({stream: true}))
+});
+
+gulp.task('browser-sync', function() {
+  browserSync({
+    server: {
+      baseDir: 'dist/',
+      index: "/index.html"
+    }
+  });
+});
+
 // gulp.task('watch',['html', 'stylus', 'js', 'image', 'fonts', 'browser-sync'], () => {
-gulp.task('watch',['html', 'js'], () => {
+gulp.task('watch',['html', 'stylus', 'js', 'browser-sync'], () => {
   gulp.watch(src.html[0], ['html'])
-  // gulp.watch(src.css, ['css'])
+  gulp.watch(src.css, ['css'])
   gulp.watch(src.js, ['js'])
-  // gulp.watch(src.stylus, ['stylus'])
+  gulp.watch(src.stylus, ['stylus'])
   // gulp.watch(src.image, ['image'])
   // gulp.watch(src.fonts, ['fonts'])
 });
 
 gulp.task('default', ['watch']);
-gulp.task('build', ['html', 'js'])
+gulp.task('build', ['html', 'stylus', 'js'])
 // gulp.task('build', ['html', 'stylus', 'js', 'image', 'fonts'])
