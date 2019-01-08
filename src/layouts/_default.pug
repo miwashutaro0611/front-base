@@ -1,6 +1,17 @@
+//layout data
+include _data/_meta
+include _data/_gtm
+// components
+include /components/Organisms/GlobalHeader/index
+include /components/Organisms/GlobalFooter/index
+
+block variables
 doctype html
 html(lang="ja")
   head
-    include ../layouts/_meta
+    +meta(path)
   body
+    +gtm
+    +GlobalHeader(path)
     block content
+    +GlobalFooter(path)

@@ -14,7 +14,11 @@ const webpack = require("webpack")
 const webpackConfig = require("./webpack.config")
 
 const src = {
-  'html': ['src/pages/*.pug', '!' + 'src/**/_*.pug'],
+  'html': [
+    'src/pages/*.pug',
+    '!' + 'src/layouts/*.pug',
+    '!' + 'src/components/**/**/*.pug'
+  ],
   'stylus': 'src/assets/stylus/*.styl',
   'js': 'src/**/*.js',
   'json': 'src/posts/',
@@ -42,7 +46,7 @@ gulp.task('html', () => {
     //   }
     // }))
     .pipe(pug({
-      basedir: 'src/pages',
+      basedir: 'src',
       pretty: true
     }))
     .pipe(gulp.dest(dest.root))
