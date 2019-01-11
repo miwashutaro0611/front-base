@@ -1,0 +1,14 @@
+mixin basemeta()
+  - var MetaTitle = Title || ""
+  - var MetaDescription = Description || ""
+  - var GlobalTitle = "全体のタイトル"
+  - var GlobalDescription = "全体の説明文"
+  - if (MetaTitle == "" || MetaTitle == "top")
+    - MetaTitle = GlobalTitle
+    - MetaDescription = GlobalDescription
+  - else
+    - MetaTitle = MetaTitle + " | " + GlobalTitle
+    - if (MetaDescription == "")
+      - MetaDescription = MetaTitle + "のページです。" + GlobalDescription
+  title #{MetaTitle}
+  meta(name="description" content=MetaDescription)
