@@ -23,7 +23,8 @@ const src = {
   'js': 'src/**/*.js',
   'json': 'src/posts/',
   'image': 'src/assets/img/**/*',
-  'fonts': 'src/assets/fonts/**/*'
+  'fonts': 'src/assets/fonts/**/*',
+  'static': 'src/static/**/*'
 }
 
 const dest = {
@@ -84,6 +85,21 @@ gulp.task('stylus', function () {
     .pipe(browserSync.reload({stream: true}))
 });
 
+gulp.task('image', function () {
+  return gulp.src(src.image)
+    .pipe(gulp.dest(dest.root + 'assets/img/'))
+});
+
+gulp.task('fonts', function () {
+  return gulp.src(src.fonts)
+    .pipe(gulp.dest(dest.root + 'assets/fonts/'))
+});
+
+gulp.task('static', function () {
+  return gulp.src(src.static)
+    .pipe(gulp.dest(dest.root))
+});
+
 gulp.task('browser-sync', function() {
   browserSync({
     server: {
@@ -93,16 +109,15 @@ gulp.task('browser-sync', function() {
   });
 });
 
-// gulp.task('watch',['html', 'stylus', 'js', 'image', 'fonts', 'browser-sync'], () => {
-gulp.task('watch',['html', 'stylus', 'js', 'browser-sync'], () => {
+gulp.task('watch',['html', 'stylus', 'js', 'image', 'fonts', 'static', 'browser-sync'], () => {
   gulp.watch(src.html[0], ['html'])
   gulp.watch(src.css, ['css'])
   gulp.watch(src.js, ['js'])
   gulp.watch(src.stylus, ['stylus'])
-  // gulp.watch(src.image, ['image'])
-  // gulp.watch(src.fonts, ['fonts'])
+  gulp.watch(src.image, ['image'])
+  gulp.watch(src.image, ['static'])
+  gulp.watch(src.fonts, ['fonts'])
 });
 
 gulp.task('default', ['watch']);
-gulp.task('build', ['html', 'stylus', 'js'])
-// gulp.task('build', ['html', 'stylus', 'js', 'image', 'fonts'])
+gulp.task('build', ['html', 'stylus', 'js', 'image', 'fonts', 'static'])
