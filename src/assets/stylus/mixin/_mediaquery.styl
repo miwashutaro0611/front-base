@@ -1,0 +1,19 @@
+//pcの最大幅(1920px)になったら
+max-pc()
+  @media screen and (min-width BREAK_POINT_MAXPC)
+    {block}
+
+//通常のpcとspの切り替え(pc用)
+pc-only()
+  @media screen and (min-width BREAK_POINT_TABLET)
+    {block}
+
+//通常のpcとspの切り替え(sp用)
+sp-only()
+  @media screen and (max-width BREAK_POINT_TABLET)
+    {block}
+
+//スマートフォンのとき
+iphone5()
+  @media screen and (max-width BREAK_POINT_SMALL)
+    {block}

@@ -1,3 +1,1 @@
-const Alert = () => {
-  alert('hello world');
-}
+console.log("js通る！！！！");

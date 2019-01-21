@@ -1,6 +1,6 @@
-html {
-  font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', 'ヒラギノ角ゴシック', 'Hiragino Sans', YuGothic, 'Yu Gothic', sans-serif;
-}
+/* # =================================================================
+   # Global selectors
+   # ================================================================= */
 html {
   box-sizing: border-box;
 }
@@ -19,6 +19,9 @@ html {
   text-decoration: inherit;
   vertical-align: inherit;
 }
+/* # =================================================================
+   # General elements
+   # ================================================================= */
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -61,6 +64,9 @@ ul,
 ol {
   list-style: none;
 }
+/* # =================================================================
+   # Forms
+   # ================================================================= */
 input,
 button,
 textarea,
@@ -101,6 +107,7 @@ textarea {
 button {
   overflow: visible;
 }
+/* Remove inner padding and border in Firefox 4+ */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -108,6 +115,7 @@ button::-moz-focus-inner,
   border-style: 0;
   padding: 0;
 }
+/* Replace focus style removed in the border reset above */
 button:-moz-focusring,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -149,6 +157,9 @@ legend {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
+/* # =================================================================
+   # Specify media element style
+   # ================================================================= */
 img {
   border-style: none;
   vertical-align: bottom;
@@ -165,6 +176,9 @@ progress,
 video {
   display: inline-block;
 }
+/* # =================================================================
+   # Accessibility
+   # ================================================================= */
 @media screen {
   [hidden~="screen"] {
     display: inherit;
@@ -183,6 +197,9 @@ video {
 [aria-disabled] {
   cursor: default;
 }
+/* # =================================================================
+   # Selection
+   # ================================================================= */
 ::-moz-selection {
   background-color: #b3d4fc;
   color: #000;

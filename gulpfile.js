@@ -34,7 +34,8 @@ const dest = {
 
 gulp.task("js", () => {
   return webpackStream(webpackConfig, webpack)
-    .pipe(gulp.dest(dest.root))
+    .pipe(gulp.dest(dest.root+ 'assets/js/'))
+    .pipe(browserSync.reload({stream: true}))
 })
 
 gulp.task('html', () => {
