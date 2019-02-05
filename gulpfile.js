@@ -10,8 +10,17 @@ const minifyCss  = require('gulp-minify-css')
 const browserSync = require('browser-sync')
 const webpackStream = require("webpack-stream")
 const webpack = require("webpack")
+const mode = require('gulp-mode')({
+  modes: ["production", "development"],
+  default: "development",
+  verbose: false
+})
+const isProduction = mode.production()
 
-const webpackConfig = require("./webpack.config")
+const webpackConfigDev = require("./webpack.dev")
+const webpackConfigProd = require("./webpack.prod")
+const webpackConfig = isProduction ? webpackConfigProd : webpackConfigDev
+
 
 const src = {
   'html': [
@@ -75,13 +84,12 @@ gulp.task('css', function() {
 // gulp stylus で実行するタスク
 gulp.task('stylus', function () {
   gulp.src(src.stylus)
-    .pipe(sourcemaps.init())
-    .pipe(plumber({errorHandler: notify.onError("エラーです。")}))
-    // .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+    .pipe(mode.development(sourcemaps.init()))
+    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
     .pipe(stylus())
     .pipe(postcss([cssnext(browsers)]))
     .pipe(minifyCss({advanced:false}))
-    .pipe(sourcemaps.write('../maps/'))
+    .pipe(mode.development(sourcemaps.write()))
     .pipe(gulp.dest(dest.root + 'assets/css/'))
     .pipe(browserSync.reload({stream: true}))
 });
