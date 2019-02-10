@@ -1,1 +1,1 @@
-console.log("js通る！！！！");
+console.log('テストテストテストテスト')

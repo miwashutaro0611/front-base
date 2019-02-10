@@ -3,11 +3,15 @@ const appDir = path.resolve(__dirname, 'src')
 
 module.exports = {
 	context: appDir,
-
   //メインとなるJavascriptファイル
 	entry: {
     bundle: './assets/js/common.js',
 	},
+
+  output: {
+    // 出力ファイル名
+    filename: 'bundle.js'
+  },
 
 	module: {
     rules: [
@@ -21,14 +25,4 @@ module.exports = {
 			}
 		]
 	},
-
-	devtool: 'source-map',
-	devServer: {
-		contentBase: 'ms/',
-		port: 3000,
-		inline: true,
-		historyApiFallback: true,
-		clientLogLevel: "info",
-		stats: { colors: true }
-	}
 }
