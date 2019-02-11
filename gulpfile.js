@@ -1,18 +1,18 @@
-const gulp = require("gulp")
-const pug = require('gulp-pug')
-const data = require('gulp-data');
-const stylus = require('gulp-stylus')
+const gulp = require("gulp") //gulpを使うためのもの
+const pug = require('gulp-pug') //pugを使うためのもの
+const data = require('gulp-data')
+const stylus = require('gulp-stylus') //stylusを使うためのもの
 const postcss = require('gulp-postcss')
 const cssnext = require('postcss-cssnext')
 const plumber = require('gulp-plumber')
 const notify = require("gulp-notify")
-const sourcemaps = require('gulp-sourcemaps')
+const sourcemaps = require('gulp-sourcemaps') //cssのsourcemapの生成
 const minifyCss  = require('gulp-minify-css')
-const browserSync = require('browser-sync')
-const webpackStream = require("webpack-stream")
-const webpack = require("webpack")
-const htmlmin = require('gulp-htmlmin')
-const mode = require('gulp-mode')({
+const browserSync = require('browser-sync') //自動読み込みのためのもの
+const webpackStream = require("webpack-stream") //gulpとwebpackを接続するためのもの
+const webpack = require("webpack") //webpack
+const htmlmin = require('gulp-htmlmin') //htmlの圧縮のために使うもの
+const mode = require('gulp-mode')({ // gulp上で本番環境と開発環境を切り分けるためのもの
   modes: ["production", "development"],
   default: "development",
   verbose: false
@@ -20,24 +20,25 @@ const mode = require('gulp-mode')({
 const filter = require('gulp-filter')
 const rev = require('gulp-rev')
 const revRewrite = require('gulp-rev-rewrite')
-const isProduction = mode.production()
+const isProduction = mode.production() //本番環境かどうかを知るために記載(本番環境ならtrue)
 
-const webpackConfigDev = require("./webpack.dev")
-const webpackConfigProd = require("./webpack.prod")
-const webpackConfig = isProduction ? webpackConfigProd : webpackConfigDev
+const webpackConfigDev = require("./webpack.dev") // 開発環境のときに実行するwebpackのファイル
+const webpackConfigProd = require("./webpack.prod") // 本番環境のときに実行するwebpackのファイル
+const webpackConfig = isProduction ? webpackConfigProd : webpackConfigDev //本番か開発かどちらかを判断するためのもの
 
 
-const src = {
-  'html': [
-    'src/pages/**/*.pug',
-    '!' + 'src/components/**/**/*.pug'
+const src = { //
+  'html': [ //
+    'src/pages/**/*.pug', //pagesの中にあるディレクトリのものを読み込む
+    '!' + 'src/**/**/_*.pug', // layouts,mixinなどの_(アンダーバー)が最初についているものについては除外
+    '!' + 'src/components/**/*.pug'  // componentsの中に入っているものについても除外する
   ],
-  'stylus': 'src/assets/stylus/*.styl',
-  'js': 'src/**/*.js',
-  'json': 'src/posts/',
-  'image': 'src/assets/img/**/*',
-  'fonts': 'src/assets/fonts/**/*',
-  'static': 'src/static/**/*'
+  'stylus': 'src/assets/stylus/*.styl', //stylus直下に入っているstylファイルのみコンンパイルを行う
+  'js': 'src/**/*.js', // jsのファイルのコンパイルを行う
+  'json': 'src/posts/', // jsonファイルのコンパイルを行う
+  'image': 'src/assets/img/**/*', // imgファイルのコンパイルを行う
+  'fonts': 'src/assets/fonts/**/*', // fontsファイルのコンパイルを行う
+  'static': 'src/static/**/*' // そのままコピーしたいものを貼り付ける場所
 }
 
 const dest = {
@@ -56,8 +57,8 @@ const dest = {
 //     .pipe(gulp.dest('dist'));
 // })
 
-gulp.task("js", () => {
-  return webpackStream(webpackConfig, webpack)
+gulp.task("js", () => { // jsファイルのコンパイルが行われたら
+  return webpackStream(webpackConfig, webpack) //
     .pipe(gulp.dest(dest.root+ 'assets/js/'))
     .pipe(browserSync.reload({stream: true}))
 })
