@@ -69,7 +69,7 @@ gulp.task('html', () => {
     .pipe(data( (file) => {
       return {
         // 'peopleData': require('./src/_data/people.json'),
-        'relativePath': file.history[0].replace(file.base, '')
+        'relativePath': file.history[0].replace(file.base, '') // bodyのクラス名をディレクトリ名とお案じにするために記載
       }
     }))
     .pipe(pug({
@@ -81,8 +81,8 @@ gulp.task('html', () => {
       minifyJS: true,// jsの圧縮
       removeComments : true// HTMLコメントを除去する
     })))
-    .pipe(gulp.dest(dest.root))
-    .pipe(browserSync.reload({stream: true}))
+    .pipe(gulp.dest(dest.root)) //指定のディレクトリに出力
+    .pipe(browserSync.reload({stream: true})) //リロード処理
 })
 
 const browsers = [
@@ -96,14 +96,14 @@ const browsers = [
 ]
 
 // cssファイルをdestディレクトリに出力（コピー）します。
-gulp.task('css', function() {
+gulp.task('css', () => {
   return gulp.src(src.css, {base: src.root})
     .pipe(gulp.dest(dest.root))
     .pipe(browserSync.reload({stream: true}))
 })
 
 // gulp stylus で実行するタスク
-gulp.task('stylus', function () {
+gulp.task('stylus', () => {
   gulp.src(src.stylus)
     .pipe(mode.development(sourcemaps.init()))
     .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
@@ -115,22 +115,22 @@ gulp.task('stylus', function () {
     .pipe(browserSync.reload({stream: true}))
 })
 
-gulp.task('image', function () {
+gulp.task('image', () => {
   return gulp.src(src.image)
-    .pipe(gulp.dest(dest.root + 'assets/img/'))
+    .pipe(gulp.dest(dest.root + 'assets/img/')) //指定のディレクトリに移動させる
 })
 
-gulp.task('fonts', function () {
+gulp.task('fonts', () => {
   return gulp.src(src.fonts)
-    .pipe(gulp.dest(dest.root + 'assets/fonts/'))
+    .pipe(gulp.dest(dest.root + 'assets/fonts/')) //指定のディレクトリに移動させる
 })
 
-gulp.task('static', function () {
+gulp.task('static', () => {
   return gulp.src(src.static)
-    .pipe(gulp.dest(dest.root))
+    .pipe(gulp.dest(dest.root)) //指定のディレクトリに移動させる
 })
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', () => {
   browserSync({
     server: {
       baseDir: 'dist/',
