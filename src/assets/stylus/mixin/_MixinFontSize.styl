@@ -2,10 +2,9 @@ MixinFontSize(font, lineheight = defaule)
   Mixinfont = font / FontSize_Default
   if lineheight == defaule
     Mixinlineheight = 1.6666
-  else if lineheight == "normal"
+  else if lineheight == normal
     Mixinlineheight = normal
   else
     Mixinlineheight = lineheight / font
   font-size Mixinfont rem
   line-height Mixinlineheight
-    

@@ -1,0 +1,15 @@
+MixinWrapperWidth(contentwidth, globalwidth= MixinBreakPoint(MAXPC), center= ture)
+  if globalwidth == max
+    width percentage(contentwidth / MixinBreakPoint(MAXPC))
+    max-width 100%
+  else
+    width percentage(contentwidth / globalwidth)
+    max-width contentwidth
+  if center == ture 
+    margin-left auto
+    margin-right auto
+  +sp-only()
+    if globalwidth == MixinBreakPoint(MAXPC) || globalwidth == max
+      width calc(100% - 40px)
+    else
+      width 100%
