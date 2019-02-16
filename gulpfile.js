@@ -30,8 +30,7 @@ const webpackConfig = isProduction ? webpackConfigProd : webpackConfigDev //本�
 const src = { //
   'html': [ //
     'src/pages/**/*.pug', //pagesの中にあるディレクトリのものを読み込む
-    '!' + 'src/**/**/_*.pug', // layouts,mixinなどの_(アンダーバー)が最初についているものについては除外
-    '!' + 'src/components/**/*.pug'  // componentsの中に入っているものについても除外する
+    '!' + 'src/**/_*.pug', // layouts,mixinなどの_(アンダーバー)が最初についているものについては除外
   ],
   'stylus': 'src/assets/stylus/*.styl', //stylus直下に入っているstylファイルのみコンンパイルを行う
   'js': 'src/**/*.js', // jsのファイルのコンパイルを行う
@@ -58,14 +57,16 @@ const dest = {
 // })
 
 gulp.task("js", () => { // jsファイルのコンパイルが行われたら
-  return webpackStream(webpackConfig, webpack) //
-    .pipe(gulp.dest(dest.root+ 'assets/js/'))
-    .pipe(browserSync.reload({stream: true}))
+  return webpackStream(webpackConfig, webpack).on('error', function (e) { //gulpでのエラーチェック
+    this.emit('end')
+  })
+  .pipe(gulp.dest(dest.root+ 'assets/js/')) // assets/js/のディレクトリに出力を行う
+  .pipe(browserSync.reload({stream: true})) // 自動リロード
 })
 
 gulp.task('html', () => {
   return gulp.src(src.html)
-    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")})) // エラーが発生しても処理を継続(エラー文も表示を行う)
     .pipe(data( (file) => {
       return {
         // 'peopleData': require('./src/_data/people.json'),
@@ -73,7 +74,7 @@ gulp.task('html', () => {
       }
     }))
     .pipe(pug({
-      basedir: 'src',
+      basedir: 'src', 
       pretty: true
     }))
     .pipe(mode.production(htmlmin({
@@ -106,13 +107,13 @@ gulp.task('css', () => {
 gulp.task('stylus', () => {
   gulp.src(src.stylus)
     .pipe(mode.development(sourcemaps.init()))
-    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
-    .pipe(stylus())
+    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")})) //エラーがあっても読み込みを継続(エラー文も表示)
+    .pipe(stylus()) // 実際コンパイル
     .pipe(postcss([cssnext(browsers)]))
-    .pipe(minifyCss({advanced:false}))
+    .pipe(minifyCss({advanced:false})) //minifyする
     .pipe(mode.development(sourcemaps.write()))
-    .pipe(gulp.dest(dest.root + 'assets/css/'))
-    .pipe(browserSync.reload({stream: true}))
+    .pipe(gulp.dest(dest.root + 'assets/css/')) // assets/css/にcssのファイルを出力
+    .pipe(browserSync.reload({stream: true})) //自動読み込み
 })
 
 gulp.task('image', () => {

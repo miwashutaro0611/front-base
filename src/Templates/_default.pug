@@ -1,9 +1,11 @@
-//layout data
+//- layout data
+include _data/_variable
 include _data/_meta
 include _data/_gtm
-// components
-include /components/Organisms/GlobalHeader/index
-include /components/Organisms/GlobalFooter/index
+//- components
+include /module/_GlobalHeader
+include /module/_GlobalFooter
+
 
 block variables
   - 
@@ -17,3 +19,4 @@ html(lang="ja")
     +GlobalHeader(path)
     block content
     +GlobalFooter(path)
+    script(src=path+"assets/js/bundle.js")
