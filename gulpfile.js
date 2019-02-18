@@ -112,7 +112,7 @@ gulp.task('static', () => { // gulp static で実行するタスク(コピーの
 gulp.task('browser-sync', () => { //実行時にブラウザを開く
   browserSync({
     server: { // ブラウザの起動を行う
-      baseDir: 'dist/', // ルートとなるディレクトリ
+      baseDir: 'dist/', // ルートとなるディレクトリ(この場合は`dist`)
       index: 'index.html' //ファイル名の指定(なくても良いが変更しやすいよう一応記載)
     }
   })
