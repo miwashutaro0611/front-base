@@ -17,9 +17,9 @@ const mode = require('gulp-mode')({ // gulp上で本番環境と開発環境を�
   default: "development",
   verbose: false
 })
-const filter = require('gulp-filter')
-const rev = require('gulp-rev')
-const revRewrite = require('gulp-rev-rewrite')
+// const filter = require('gulp-filter')
+// const rev = require('gulp-rev')
+// const revRewrite = require('gulp-rev-rewrite')
 const isProduction = mode.production() //本番環境かどうかを知るために記載(本番環境ならtrue)
 
 const webpackConfigDev = require("./webpack.dev") // 開発環境のときに実行するwebpackのファイル
