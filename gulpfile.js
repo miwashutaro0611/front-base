@@ -44,7 +44,9 @@ const dest = { //出力を行うディレクトリを変数として管理する
 gulp.task("js", () => { // jsファイルのコンパイルが行われたら
   // 第一引数に実行するwebpackのpath, 
   // 第二引数にwebpack-streamのwebpackのバージョン(多分1系?)なので、使いたいwebpackのバージョンを指定する(バージョンはpackage.jsonのwebpack参考)
-  return webpackStream(webpackConfig, webpack)
+  return webpackStream(webpackConfig, webpack).on('error', function (e) { // errorでwatchが止まらないように
+      this.emit('end'); //watchはendを待っているので、endを発生させることで継続させるようにする
+    })
     .pipe(gulp.dest(dest.assets+ 'js/')) // assets/js/のディレクトリに出力を行う
     .pipe(browserSync.reload({stream: true})) // 自動リロード
 })
