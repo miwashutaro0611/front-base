@@ -122,11 +122,10 @@ gulp.task('browser-sync', () => { //実行時にブラウザを開く
 
 gulp.task('watch',['html', 'stylus', 'js', 'image', 'fonts', 'static', 'browser-sync'], () => { // ファイルの監視
   gulp.watch(src.html[0], ['html']) //htmlファイルの監視
-  gulp.watch(src.css, ['css']) //htmlファイルの監視
   gulp.watch(src.js, ['js']) //jsファイルの監視
   gulp.watch(src.stylus, ['stylus']) //stylusファイルの監視
   gulp.watch(src.image, ['image']) //imageファイルの監視
-  gulp.watch(src.image, ['static']) //staticファイルの監視
+  gulp.watch(src.static, ['static']) //staticファイルの監視
   gulp.watch(src.fonts, ['fonts']) //fontファイルの監視
 })
 
