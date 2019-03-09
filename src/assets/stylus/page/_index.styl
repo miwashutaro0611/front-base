@@ -1,6 +1,7 @@
 p
   MixinWrapperWidth 1280px
   MixinFontSize 14 40
-  color #f00
-  +sp-only()
-    font-size 20px
+  +custom-breakpoint(BREAK_POINT_CUSTOM, min)
+    font-size 100px
+  // +sp-only()
+  //   font-size 20px
