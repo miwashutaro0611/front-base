@@ -1,2 +1,5 @@
-console.log('テストテストテストテスト')
-console.log('テストテストテストテスト')
+const hello = name => {
+  document.body.textContent = `Hello,${name}!`;
+};
+
+hello('World');

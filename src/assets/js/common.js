@@ -1,1 +1,1 @@
-import "./Action/alert"
+import "./Action/alert";
