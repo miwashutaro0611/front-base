@@ -1,11 +1,13 @@
 BREAK_POINT = {
   MAXPC: 1920,
-  PC_CONTENT: 1500,
+  PC_CONTENT: 1560,
   PC: 1280,
-  TABLET: 1024,
+  TABLET: 1023,
   SMARTPHONE: 767,
   SMALL: 320
 }
+
+BREAK_POINT_CUSTOM = 1180
 
 MixinBreakPoint(deviceSize)
   return BREAK_POINT[deviceSize]px

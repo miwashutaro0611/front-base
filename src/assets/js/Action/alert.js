@@ -1,2 +1,5 @@
-console.log('テストテストテストテスト')
-console.log('テストテストテストテスト')
+const hello = name => {
+  return `Hello,${name}!`;
+};
+
+hello('World');

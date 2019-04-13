@@ -26,10 +26,16 @@ module.exports = {
 			{
 				test: /\.js$/, // .jsのファイルなら
 				exclude: /node_modules/, // node_modulesは除外
-				loader: 'babel-loader', //babel-loaderを実行
-				query:{ //loaderに渡したいクエリパラメーターを指定
-					presets: ['es2015'] //ES2015のpresetを指定する
-				}
+				use: [
+          'babel-loader', //babel-loaderを実行
+          {
+            loader: 'eslint-loader',
+            options: {
+              failOnError: true,
+            }
+          }
+        ],
+				
 			}
 		]
 	},
