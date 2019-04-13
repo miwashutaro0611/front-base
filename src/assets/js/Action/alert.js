@@ -1,5 +1,5 @@
 const hello = name => {
-  document.body.textContent = `Hello,${name}!`;
+  return `Hello,${name}!`;
 };
 
-hello("World");
+hello('World');
