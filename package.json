@@ -9,7 +9,7 @@
     "supremacy": "stylus-supremacy format ./src/**/*.styl -p ./stylus-supremacy.json -r",
     "eslint": "eslint --fix src",
     "build:develop": "rm -rf dist/ && gulp build",
-    "build:production": "rm -rf dist/ && gulp build --production",
+    "build": "rm -rf dist/ && gulp build --production",
     "deploy": "gulp build --production && mv ._headers dest/_headers"
   },
   "lint-staged": {
