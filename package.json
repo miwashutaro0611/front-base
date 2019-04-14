@@ -12,6 +12,9 @@
     "build": "rm -rf dist/ && gulp build --production"
   },
   "lint-staged": {
+    "*.styl": [
+      "stylus-supremacy format ./src/**/*.styl -p ./stylus-supremacy.json -r"
+    ],
     "*.js": [
       "eslint --fix src",
       "git add"
