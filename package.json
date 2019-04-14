@@ -10,7 +10,7 @@
     "eslint": "eslint --fix src",
     "build:develop": "rm -rf dist/ && gulp build",
     "build": "rm -rf dist/ && gulp build --production",
-    "deploy": "gulp build --production && mv ._headers dest/_headers"
+    "deploy": "gulp build --production && mv ._headers dist/_headers"
   },
   "lint-staged": {
     "*.styl": [
