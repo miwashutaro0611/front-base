@@ -13,7 +13,8 @@
   },
   "lint-staged": {
     "*.styl": [
-      "stylus-supremacy format ./src/**/*.styl -p ./stylus-supremacy.json -r"
+      "stylus-supremacy format ./src/**/*.styl -p ./stylus-supremacy.json -r",
+      "git add"
     ],
     "*.js": [
       "eslint --fix src",
