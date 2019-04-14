@@ -6,7 +6,7 @@
   "scripts": {
     "start": "gulp",
     "precommit": "lint-staged",
-    "supremacy": "stylus-supremacy format ./**/*.styl -p ./stylus-supremacy.json -r",
+    "supremacy": "stylus-supremacy format ./src/**/*.styl -p ./stylus-supremacy.json -r",
     "eslint": "eslint --fix src",
     "test": "rm -rf dist/ && gulp build",
     "build": "rm -rf dist/ && gulp build --production"

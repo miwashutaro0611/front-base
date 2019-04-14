@@ -25,7 +25,7 @@
   "stylusSupremacy.alwaysUseAtBlock": false,
   "stylusSupremacy.alwaysUseExtends": false,
   "stylusSupremacy.alwaysUseNoneOverZero": false,
-  "stylusSupremacy.alwaysUseZeroWithoutUnit": false,
-  "stylusSupremacy.reduceMarginAndPaddingValues": false,
+  "stylusSupremacy.alwaysUseZeroWithoutUnit": true,
+  "stylusSupremacy.reduceMarginAndPaddingValues": true,
   "stylusSupremacy.ignoreFiles": []
 }
