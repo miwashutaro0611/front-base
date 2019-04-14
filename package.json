@@ -6,6 +6,7 @@
   "scripts": {
     "start": "gulp",
     "precommit": "lint-staged",
+    "supremacy": "stylus-supremacy format ./**/*.styl -p ./stylus-supremacy.json -r",
     "eslint": "eslint --fix src",
     "test": "rm -rf dist/ && gulp build",
     "build": "rm -rf dist/ && gulp build --production"
@@ -54,6 +55,7 @@
     "pug-loader": "^2.4.0",
     "style-loader": "^0.23.0",
     "stylus-loader": "^3.0.2",
+    "stylus-supremacy": "^2.12.7",
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
