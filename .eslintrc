@@ -12,11 +12,12 @@
       "error",
       {
         "singleQuote": true,
-        "trailingComma": "es5"
+        "trailingComma": "es5",
+        "semi": false
       }
     ]
   },
   "parserOptions": {
-      "sourceType": "module"
+    "sourceType": "module"
   }
 }
