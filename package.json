@@ -19,7 +19,7 @@
       "yarn run commit:stylint",
       "git add"
     ],
-    "*.js": [
+    "src/*.js": [
       "yarn run commit:eslint",
       "git add"
     ]
