@@ -8,7 +8,7 @@
   "stylusSupremacy.insertNewLineAroundOthers": false,
   "stylusSupremacy.preserveNewLinesBetweenPropertyValues": false,
   "stylusSupremacy.insertSpaceBeforeComment": true,
-  "stylusSupremacy.insertSpaceAfterComment": true,
+  "stylusSupremacy.insertSpaceAfterComment": false,
   "stylusSupremacy.insertSpaceAfterComma": true,
   "stylusSupremacy.insertSpaceInsideParenthesis": false,
   "stylusSupremacy.insertParenthesisAfterNegation": false,
