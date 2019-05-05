@@ -1,9 +1,10 @@
-/* # =================================================================
+/*# =================================================================
 # Global selectors
-# ================================================================= */
+# =================================================================*/
 html
 	box-sizing border-box
 
+//@stylint off
 *
 	margin 0
 	padding 0
@@ -19,9 +20,9 @@ html
 	vertical-align inherit
 	text-decoration inherit
 
-/* # =================================================================
+/*# =================================================================
 # General elements
-# ================================================================= */
+# =================================================================*/
 audio:not([controls])
 	display none
 	height 0
@@ -64,9 +65,9 @@ ul
 ol
 	list-style none
 
-/* # =================================================================
+/*# =================================================================
 # Forms
-# ================================================================= */
+# =================================================================*/
 input
 button
 textarea
@@ -107,7 +108,7 @@ textarea
 button
 	overflow visible
 
-/* Remove inner padding and border in Firefox 4+ */
+/*Remove inner padding and border in Firefox 4+*/
 button::-moz-focus-inner
 [type='button']::-moz-focus-inner
 [type='reset']::-moz-focus-inner
@@ -115,7 +116,7 @@ button::-moz-focus-inner
 	padding 0
 	border-style 0
 
-/* Replace focus style removed in the border reset above */
+/*Replace focus style removed in the border reset above*/
 button:-moz-focusring
 [type='button']::-moz-focus-inner
 [type='reset']::-moz-focus-inner
@@ -155,9 +156,9 @@ legend
 	outline-offset -2px
 	-webkit-appearance textfield
 
-/* # =================================================================
+/*# =================================================================
 # Specify media element style
-# ================================================================= */
+# =================================================================*/
 img
 	border-style none
 	vertical-align bottom
@@ -174,9 +175,9 @@ progress
 video
 	display inline-block
 
-/* # =================================================================
+/*# =================================================================
 # Accessibility
-# ================================================================= */
+# =================================================================*/
 @media screen
 	[hidden~='screen']
 		display inherit
@@ -190,12 +191,13 @@ video
 [aria-controls]
 	cursor pointer
 
+//@stylint on
 [aria-disabled]
 	cursor default
 
-/* # =================================================================
+/*# =================================================================
 # Selection
-# ================================================================= */
+# =================================================================*/
 ::-moz-selection
 ::selection
 	background-color #b3d4fc
