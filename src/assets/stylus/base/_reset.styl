@@ -1,31 +1,31 @@
-/* # =================================================================
-   # Global selectors
-   # ================================================================= */
-
+/*# =================================================================
+# Global selectors
+# =================================================================*/
 html
-  box-sizing border-box
+	box-sizing border-box
+
+//@stylint off
 *
-  margin 0
-  padding 0
+	margin 0
+	padding 0
 
 *
 ::before
 ::after
-  background-repeat no-repeat
-  box-sizing inherit
+	box-sizing inherit
+	background-repeat no-repeat
 
 ::before
 ::after
-  text-decoration inherit
-  vertical-align inherit
+	vertical-align inherit
+	text-decoration inherit
 
-/* # =================================================================
-   # General elements
-   # ================================================================= */
-
+/*# =================================================================
+# General elements
+# =================================================================*/
 audio:not([controls])
-  display none
-  height 0
+	display none
+	height 0
 
 article
 aside
@@ -39,171 +39,167 @@ menu
 nav
 section
 summary
-  display block
+	display block
 
 [hidden]
 template
-  display none
+	display none
 
 [data-scroll]
-  cursor pointer
+	cursor pointer
 
 a
-  color inherit
-  text-decoration none
-  background-color transparent
-  -webkit-text-decoration-skip objects
-  &:active
-  &:hover
-    outline-width 0
+	background-color transparent
+	color inherit
+	text-decoration none
+	-webkit-text-decoration-skip objects
+	&:active
+	&:hover
+		outline-width 0
 
 b
 strong
-  font-weight bolder
+	font-weight bolder
 
 ul
 ol
-  list-style none
+	list-style none
 
-/* # =================================================================
-   # Forms
-   # ================================================================= */
-
+/*# =================================================================
+# Forms
+# =================================================================*/
 input
 button
 textarea
 select
-  margin 0
-  padding 0
-  background-color transparent
-  background none
-  border none
-  border-radius 0
-  font inherit
-  color inherit
-  appearance none
+	margin 0
+	padding 0
+	border none
+	border-radius 0
+	background none
+	background-color transparent
+	color inherit
+	font inherit
+	appearance none
 
 optgroup
-  font inherit
+	font inherit
 
 button
-[type="button"]
-[type="reset"]
-[type="submit"]
-[role="button"]
-  cursor pointer
+[type='button']
+[type='reset']
+[type='submit']
+[role='button']
+	cursor pointer
 
 [disabled]
-  cursor default
+	cursor default
 
-[type="number"]
-  width auto
+[type='number']
+	width auto
 
-[type="search"]
-  -webkit-appearance textfield
+[type='search']
+	-webkit-appearance textfield
 
 textarea
-  overflow auto
-  resize vertical
+	overflow auto
+	resize vertical
 
 button
-  overflow visible
+	overflow visible
 
-/* Remove inner padding and border in Firefox 4+ */
+/*Remove inner padding and border in Firefox 4+*/
 button::-moz-focus-inner
-[type="button"]::-moz-focus-inner
-[type="reset"]::-moz-focus-inner
-[type="submit"]::-moz-focus-inner
-  border-style 0
-  padding 0
+[type='button']::-moz-focus-inner
+[type='reset']::-moz-focus-inner
+[type='submit']::-moz-focus-inner
+	padding 0
+	border-style 0
 
-/* Replace focus style removed in the border reset above */
+/*Replace focus style removed in the border reset above*/
 button:-moz-focusring
-[type="button"]::-moz-focus-inner
-[type="reset"]::-moz-focus-inner
-[type="submit"]::-moz-focus-inner
-  outline 1px dotted ButtonText
+[type='button']::-moz-focus-inner
+[type='reset']::-moz-focus-inner
+[type='submit']::-moz-focus-inner
+	outline 1px dotted ButtonText
 
 button
-html [type="button"]
-[type="reset"]
-[type="submit"]
-  -webkit-appearance button
+html [type='button']
+[type='reset']
+[type='submit']
+	-webkit-appearance button
 
 button
 select
-  text-transform none
+	text-transform none
 
 select
-  -moz-appearance none
-  -webkit-appearance none
-  &::-ms-expand
-    display none
-  &::-ms-value
-    color currentColor
+	-moz-appearance none
+	-webkit-appearance none
+	&::-ms-expand
+		display none
+	&::-ms-value
+		color currentColor
 
 legend
-  border 0
-  color inherit
-  display table
-  max-width 100%
-  white-space normal
+	display table
+	max-width 100%
+	border 0
+	color inherit
+	white-space normal
 
 ::-webkit-file-upload-button
-  -webkit-appearance button
-  font inherit
+	font inherit
+	-webkit-appearance button
 
-[type="search"]
-  -webkit-appearance textfield
-  outline-offset -2px
+[type='search']
+	outline-offset -2px
+	-webkit-appearance textfield
 
-/* # =================================================================
-   # Specify media element style
-   # ================================================================= */
-
+/*# =================================================================
+# Specify media element style
+# =================================================================*/
 img
-  border-style none
-  vertical-align bottom
+	border-style none
+	vertical-align bottom
 
 progress
-  vertical-align baseline
+	vertical-align baseline
 
 svg:not(:root)
-  overflow hidden
+	overflow hidden
 
 audio
 canvas
 progress
 video
-  display inline-block
+	display inline-block
 
-
-/* # =================================================================
-   # Accessibility
-   # ================================================================= */
-
+/*# =================================================================
+# Accessibility
+# =================================================================*/
 @media screen
-  [hidden~="screen"]
-    display inherit
-  [hidden~="screen"]:not(:active):not(:focus):not(:target)
-    position absolute !important
-    clip rect(0 0 0 0) !important
+	[hidden~='screen']
+		display inherit
+	[hidden~='screen']:not(:active):not(:focus):not(:target)
+		position absolute !important
+		clip rect(0 0 0 0) !important
 
-[aria-busy="true"]
-  cursor progress
+[aria-busy='true']
+	cursor progress
 
 [aria-controls]
-  cursor pointer
+	cursor pointer
 
+//@stylint on
 [aria-disabled]
-  cursor default
+	cursor default
 
-/* # =================================================================
-   # Selection
-   # ================================================================= */
-
+/*# =================================================================
+# Selection
+# =================================================================*/
 ::-moz-selection
 ::selection
-  background-color #b3d4fc
-  color #000
-  text-shadow none
+	background-color #b3d4fc
+	color #000
+	text-shadow none

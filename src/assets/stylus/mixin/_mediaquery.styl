@@ -1,40 +1,43 @@
 //pcの最大幅(1920px)になったら
 max-pc()
-  @media screen and (min-width MixinBreakPoint(MAXPC))
-    {block}
+	@media screen and (min-width: MixinBreakPoint(MAXPC))
+		{block}
 
 //通常のpc用(1560px以下)
 normal-pc()
-  @media screen and (max-width MixinBreakPoint(PC_CONTENT))
-    {block}
+	@media screen and (max-width: MixinBreakPoint(PC_CONTENT))
+		{block}
 
 //通常のpc用(1280px以下)
 min-pc()
-  @media screen and (max-width MixinBreakPoint(PC))
-    {block}
+	@media screen and (max-width: MixinBreakPoint(PC))
+		{block}
 
 //通常のpcとspの切り替え(pc用)
 pc-only()
-  @media screen and (min-width MixinBreakPoint(TABLET))
-    {block}
+	@media screen and (min-width: MixinBreakPoint(TABLET))
+		{block}
 
 //通常のpcとspの切り替え(sp用)
 sp-only()
-  @media screen and (max-width MixinBreakPoint(TABLET))
-    {block}
-
+	@media screen and (max-width: MixinBreakPoint(TABLET))
+		{block}
 
 //スマートフォンのみ別で対応したい場合(767px以下)
 min-sp()
-  @media screen and (max-width MixinBreakPoint(SMARTPHONE))
-    {block}
+	@media screen and (max-width: MixinBreakPoint(SMARTPHONE))
+		{block}
 
 //iphone5のみ別で対応したい場合
 iphone5()
-  @media screen and (max-width MixinBreakPoint(SMALL))
-    {block}
+	@media screen and (max-width: MixinBreakPoint(SMALL))
+		{block}
 
 //カスタムブレイクポイント
-custom-breakpoint(value, maxmin=max)
-  @media screen and ({maxmin}-width value px)
-    {block}
+custom-breakpoint(value, maxmin = max)
+	if maxmin == sp || max
+		maxmin = max
+	else if manmin == pc || min
+		maxmin = min
+	@media screen and ({maxmin}-width: value px)
+		{block}

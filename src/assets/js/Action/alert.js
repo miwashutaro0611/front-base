@@ -1,5 +1,7 @@
 const hello = name => {
-  return `Hello,${name}!`;
-};
+  const test = 'test'
+  if (test == 'test') return
+  return `Hello,${name}!`
+}
 
-hello('World');
+hello('World')
