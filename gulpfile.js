@@ -1,4 +1,4 @@
-const gulp = require('gulp') //gulpを使うためのもの
+const { src, dest, watch, parallel } = require('gulp') //gulpを使うためのもの
 const pug = require('gulp-pug') //pugを使うためのもの
 const data = require('gulp-data') //jsonファイル・ディレクトリ名(bodyにclass付加)を取得するためのもの
 const stylus = require('gulp-stylus') //stylusを使うためのもの
@@ -19,13 +19,12 @@ const mode = require('gulp-mode')({
   verbose: false, //詳細メッセージを表示するか(デフォルトと同じなので非表示でも可)
 })
 const isProduction = mode.production() //本番環境かどうかを知るために記載(本番環境ならtrue)
-const stylint = require('gulp-stylint') //stylusのlintを使うためのもの
 
 const webpackConfigDev = require('./webpack.dev') // 開発環境のときに実行するwebpackのファイル
 const webpackConfigProd = require('./webpack.prod') // 本番環境のときに実行するwebpackのファイル
 const webpackConfig = isProduction ? webpackConfigProd : webpackConfigDev //本番か開発かどちらかを判断するためのもの
 
-const src = {
+const srcPath = {
   // ビルドを行うファイルの一覧
   html: [
     // html(pug)ファイルのビルドの条件
@@ -39,13 +38,13 @@ const src = {
   static: 'src/static/**/*', // そのままコピーしたいものを貼り付ける場所
 }
 
-const dest = {
+const destPath = {
   //出力を行うディレクトリを変数として管理する
   root: 'dist/', //htmlなどのビルドを行う時のベースのパス
   assets: 'dist/assets/', //css,jsなどのビルドを行う時のベースのパス
 }
 
-gulp.task('js', () => {
+const jsFunc = () => {
   // jsファイルのコンパイルが行われたら
   // 第一引数に実行するwebpackのpath,
   // 第二引数にwebpack-streamのwebpackのバージョン(多分1系?)なので、使いたいwebpackのバージョンを指定する(バージョンはpackage.jsonのwebpack参考)
@@ -54,13 +53,12 @@ gulp.task('js', () => {
       // errorでwatchが止まらないように
       this.emit('end') //watchはendを待っているので、endを発生させることで継続させるようにする
     })
-    .pipe(gulp.dest(dest.assets + 'js/')) // assets/js/のディレクトリに出力を行う
+    .pipe(dest(`${destPath.assets}js/`)) // assets/js/のディレクトリに出力を行う
     .pipe(browserSync.reload({ stream: true })) // 自動リロード
-})
+}
 
-gulp.task('html', () => {
-  return gulp
-    .src(src.html) //結果をwatchへ返却する
+const htmlFunc = () => {
+  return src(srcPath.html) //結果をwatchへ返却する
     .pipe(
       plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })
     ) // エラーが発生しても処理を継続(エラー文も表示を行う)
@@ -81,18 +79,18 @@ gulp.task('html', () => {
       })
     )
     .pipe(
-      mode.production(
+      mode.production( //本番環境のみ
         htmlmin({
-          //htmlの圧縮(developのときのみ)
+          //htmlの圧縮
           collapseWhitespace: true, // 余白を除去する
           minifyJS: true, // jsの圧縮
           removeComments: true, // HTMLコメントを除去する
         })
       )
     )
-    .pipe(gulp.dest(dest.root)) //指定のディレクトリに出力
+    .pipe(dest(destPath.root)) //指定のディレクトリに出力
     .pipe(browserSync.reload({ stream: true })) //リロード処理
-})
+}
 
 const browsers = [
   // cssの対応するブラウザーを決める
@@ -105,46 +103,41 @@ const browsers = [
   'Android >= 5', //Android Browserは5以上
 ]
 
-gulp.task('stylus', () => {
+const stylusFunc = () => {
   // gulp stylus で実行するタスク
   //上srcで全ファイルを対象にして、下のsrcは出力の場所の範囲のみにすることで、下層を編集してもstyle.cssのみにするようにする
-  return gulp
-    .src('src/assets/stylus/*.styl') //結果をwatchへ返却する
+  return src('src/assets/stylus/*.styl') //結果をwatchへ返却する
     .pipe(mode.development(sourcemaps.init())) // ソースマップを初期化(developのときのみ)
     .pipe(
       plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })
     ) //エラーがあっても読み込みを継続(エラー文も表示)
-    .pipe(stylint()) //lintを実行
     .pipe(stylus()) // 実際のコンパイル
     .pipe(postcss([cssnext(browsers)])) //各種ブラウザに対応させる(flexなど)
     .pipe(cleanCSS()) //1行に圧縮する
     .pipe(mode.development(sourcemaps.write())) // ソースマップの作成(developのときのみ)
-    .pipe(gulp.dest(dest.assets + 'css/')) // assets/css/にcssのファイルを出力
+    .pipe(dest(`${destPath.assets}css/`)) // assets/css/にcssのファイルを出力
     .pipe(browserSync.reload({ stream: true })) //自動読み込み
-})
+}
 
-gulp.task('image', () => {
+const imageFunc = () => {
   // gulp image で実行するタスク(コピーのみ)
-  return gulp
-    .src(src.image) //結果をwatchへ返却する
-    .pipe(gulp.dest(dest.assets + 'img/')) //指定のディレクトリに移動させる
-})
+  return src(srcPath.image) //結果をwatchへ返却する
+    .pipe(dest(`${destPath.assets}img/`)) //指定のディレクトリに移動させる
+}
 
-gulp.task('fonts', () => {
+const fontsFunc = () => {
   // gulp fonts で実行するタスク(コピーのみ)
-  return gulp
-    .src(src.fonts) //結果をwatchへ返却する
-    .pipe(gulp.dest(dest.assets + 'fonts/')) //指定のディレクトリに移動させる
-})
+  return src(srcPath.fonts) //結果をwatchへ返却する
+    .pipe(dest(`${destPath.assets}fonts/`)) //指定のディレクトリに移動させる
+}
 
-gulp.task('static', () => {
+const staticFunc = () => {
   // gulp static で実行するタスク(コピーのみ)
-  return gulp
-    .src(src.static) //結果をwatchへ返却する
-    .pipe(gulp.dest(dest.root)) //指定のディレクトリに移動させる
-})
+  return src(srcPath.static) //結果をwatchへ返却する
+    .pipe(dest(destPath.root)) //指定のディレクトリに移動させる
+}
 
-gulp.task('browser-sync', () => {
+const browserSyncFunc = () => {
   //実行時にブラウザを開く
   browserSync({
     server: {
@@ -153,21 +146,17 @@ gulp.task('browser-sync', () => {
       index: 'index.html', //ファイル名の指定(なくても良いが変更しやすいよう一応記載)
     },
   })
-})
+}
 
-gulp.task(
-  'watch',
-  ['html', 'stylus', 'js', 'image', 'fonts', 'static', 'browser-sync'],
-  () => {
-    // ファイルの監視
-    gulp.watch(src.html[0], ['html']) //htmlファイルの監視
-    gulp.watch(src.js, ['js']) //jsファイルの監視
-    gulp.watch(src.stylus, ['stylus']) //stylusファイルの監視
-    gulp.watch(src.image, ['image']) //imageファイルの監視
-    gulp.watch(src.static, ['static']) //staticファイルの監視
-    gulp.watch(src.fonts, ['fonts']) //fontファイルの監視
-  }
-)
+const watchFiles = () => { //監視ファイルの一覧
+  watch(srcPath.html[0], htmlFunc) //htmlファイルの監視
+  watch(srcPath.stylus, stylusFunc) //stylusファイルの監視
+  watch(srcPath.js, jsFunc) //jsファイルの監視
+  watch(srcPath.image, imageFunc) //imageファイルの監視
+  watch(srcPath.static, staticFunc) ///staticファイルの監視
+  watch(srcPath.fonts, fontsFunc) //fontsファイルの監視
+}
 
-gulp.task('default', ['watch']) // gulpのデフォルトの処理を記載する
-gulp.task('build', ['html', 'stylus', 'js', 'image', 'fonts', 'static']) //ビルド時に行う処理
+exports.default = parallel(watchFiles, browserSyncFunc) // gulpのデフォルトの処理を記載する(ブラウザの開く処理も)
+
+exports.build = parallel(htmlFunc, stylusFunc, jsFunc, imageFunc, staticFunc, fontsFunc) //ビルド時に行う処理
