@@ -12,9 +12,7 @@ module.exports = {
   //メインとなるJavascriptファイル
 	entry: { 
 		//コンパイル前のjsのファイル(基本的なもの)
-		bundle: './assets/js/common.js',
-		//ローディングのみ別で分けたかったので、別のファイルに（現状はなにもないので、全体と同じものを配置・名前のみ変更）
-		load: './assets/js/common.js',
+		bundle: './assets/js/common.js'
 	},
 	//出力の処理
   output: {
@@ -23,20 +21,19 @@ module.exports = {
   },
 	module: { //module.rules ↓の説明
     rules: [ // testの正規表現でヒットしたものを以下で実行させる
+		{
+			test: /\.js$/, // .jsのファイルなら
+			exclude: /node_modules/, // node_modulesは除外
+			use: [
+			'babel-loader', //babel-loaderを実行
 			{
-				test: /\.js$/, // .jsのファイルなら
-				exclude: /node_modules/, // node_modulesは除外
-				use: [
-          'babel-loader', //babel-loaderを実行
-          {
-            loader: 'eslint-loader',
-            options: {
-              failOnError: true,
-            }
-          }
-        ],
-				
+				loader: 'eslint-loader',
+				options: {
+				failOnError: true,
+				}
 			}
-		]
+			],	
+		}
+	]
 	},
 }
