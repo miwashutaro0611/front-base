@@ -137,6 +137,8 @@ const watchFiles = () => {
   watch(srcPath.fonts, fontsFunc)
 }
 
-exports.default = parallel(watchFiles, browserSyncFunc)
+exports.default = parallel(
+  watchFiles, browserSyncFunc
+)
 
 exports.build = parallel(htmlFunc, stylusFunc, jsFunc, imageFunc, staticFunc, fontsFunc)

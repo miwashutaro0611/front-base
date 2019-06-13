@@ -70,5 +70,7 @@
     "webpack-stream": "^5.1.1",
     "yarn": "^1.16.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "viewport-extra": "^1.0.3"
+  }
 }
