@@ -1,5 +1,7 @@
-function hello(name) {
-  document.body.textContent = 'Hello, ' + nama + '!'
+const hello = name => {
+  const test = 'test'
+  if (test == 'test') return
+  return `Hello,${name}!`
 }
 
 hello('World')
