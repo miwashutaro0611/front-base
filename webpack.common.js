@@ -4,28 +4,31 @@ const appDir = path.resolve(__dirname, 'src')
 module.exports = {
 	context: appDir,
 	entry: { 
-		bundle: './assets/js/common.js',
-		head: './assets/js/head.js'
+		bundle: './assets/js/common.ts',
+		head: './assets/js/head.ts'
 	},
 	output: {
 		filename: '[name].js'
 	},
 	module: {
-    rules: [
-		{
-			enforce: 'pre',
-			test: /\.js$/,
-			exclude: /node_modules/,
-			use: [
-			'babel-loader',
+		rules: [
 			{
-				loader: 'eslint-loader',
-				options: {
-				failOnError: true,
+				enforce: 'pre',
+				test: /\.ts$/,
+				exclude: /node_modules/,
+				use: [
+				'ts-loader',
+				{
+					loader: 'eslint-loader',
+					options: {
+					failOnError: true,
+					}
 				}
+				],	
 			}
-			],	
-		}
-	]
+		]
 	},
+	resolve: {
+		extensions: [".ts"]
+	}
 }
