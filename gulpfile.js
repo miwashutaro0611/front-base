@@ -29,7 +29,7 @@ const srcPath = {
     '!' + 'src/**/_*.pug',
   ],
   stylus: 'src/**/*.styl',
-  js: 'src/**/*.js',
+  js: 'src/**/*.ts',
   image: 'src/assets/img/**/*',
   fonts: 'src/assets/fonts/**/*',
   static: 'src/static/**/*',
