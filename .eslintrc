@@ -3,6 +3,11 @@
   "env": {
     "es6": true
   },
+  "settings": {
+    "node": {
+      "tryExtensions": [".ts", ".js", ".json", ".node"]
+    }
+  },
   "parser": "babel-eslint",
   "extends": [
     "airbnb-base",

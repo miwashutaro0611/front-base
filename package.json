@@ -6,7 +6,7 @@
   "scripts": {
     "start": "gulp",
     "supremacy": "stylus-supremacy format ./src/**/*.styl -p ./stylus-supremacy.json -r",
-    "eslint": "eslint --fix src",
+    "eslint": "eslint --fix src/**/*.ts",
     "stylint": "stylint src/assets/stylus",
     "build:develop": "rm -rf dist/ && gulp build",
     "build": "rm -rf dist/ && gulp build --production",
@@ -19,7 +19,7 @@
       "yarn run commit:stylint",
       "git add"
     ],
-    "src/*.js": [
+    "src/*.ts": [
       "yarn run commit:eslint",
       "git add"
     ]
@@ -28,6 +28,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^7.1.2",
