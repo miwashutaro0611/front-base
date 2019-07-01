@@ -6,21 +6,26 @@
   "scripts": {
     "start": "gulp",
     "supremacy": "stylus-supremacy format ./src/**/*.styl -p ./stylus-supremacy.json -r",
-    "eslint": "eslint --fix src/**/*.ts",
+    "tslint": "tslint --fix src/**/*.ts",
     "stylint": "stylint src/assets/stylus",
     "build:develop": "rm -rf dist/ && gulp build",
     "build": "rm -rf dist/ && gulp build --production",
     "deploy": "gulp build --production && mv ._headers dist/_headers",
     "commit:stylint": "yarn run supremacy && yarn run stylint",
-    "commit:eslint": "yarn run eslint"
+    "commit:tslint": "yarn run tslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.styl": [
       "yarn run commit:stylint",
       "git add"
     ],
-    "src/*.ts": [
-      "yarn run commit:eslint",
+    "*.ts": [
+      "yarn run commit:tslint",
       "git add"
     ]
   },
@@ -67,6 +72,11 @@
     "stylus-loader": "^3.0.2",
     "stylus-supremacy": "^2.12.7",
     "ts-loader": "^6.0.3",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tsutils": "^2.29.0",
     "typescript": "^3.5.2",
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
