@@ -19,10 +19,11 @@ module.exports = {
 				use: [
 				'ts-loader',
 				{
-					loader: 'eslint-loader',
+					loader: 'tslint-loader',
 					options: {
-					failOnError: true,
-					}
+						typeCheck: true,
+						fix: true,
+					},
 				}
 				],	
 			}
