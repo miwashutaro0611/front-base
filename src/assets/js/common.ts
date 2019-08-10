@@ -1,1 +1,1 @@
-import './Action/alert.ts'
+import './Action/alert'

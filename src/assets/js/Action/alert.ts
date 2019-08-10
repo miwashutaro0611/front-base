@@ -4,4 +4,4 @@ const hello = (name: string): string => {
   return `Hello,${name}!`
 }
 
-hello('World')
+console.log(hello('World'))

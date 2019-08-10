@@ -3,7 +3,7 @@ const appDir = path.resolve(__dirname, 'src')
 
 module.exports = {
 	context: appDir,
-	entry: { 
+	entry: {
 		bundle: './assets/js/common.ts',
 		head: './assets/js/head.ts'
 	},
@@ -25,7 +25,7 @@ module.exports = {
 						fix: true,
 					},
 				}
-				],	
+				],
 			}
 		]
 	},
