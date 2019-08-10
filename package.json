@@ -12,7 +12,8 @@
     "build": "rm -rf dist/ && gulp build --production",
     "deploy": "gulp build --production && mv ._headers dist/_headers",
     "commit:stylint": "yarn run supremacy && yarn run stylint",
-    "commit:tslint": "yarn run tslint"
+    "commit:tslint": "yarn run tslint",
+    "codecrumbs": "codecrumbs -d src/assets/js -e src/assets/js/common.ts"
   },
   "husky": {
     "hooks": {
@@ -39,6 +40,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "browser-sync": "^2.26.3",
+    "codecrumbs": "^1.7.0",
     "css-loader": "^1.0.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "gulp": "^4.0.2",
