@@ -25,8 +25,8 @@ const webpackConfig = isProduction ? webpackConfigProd : webpackConfigDev
 
 const srcPath = {
   html: [
-    'src/pages/**/*.pug',
-    '!' + 'src/**/_*.pug',
+    'src/pug/**/*.pug',
+    '!' + 'src/pug/**/_*.pug',
   ],
   stylus: 'src/**/*.styl',
   js: 'src/**/*.ts',
@@ -63,7 +63,7 @@ const htmlFunc = () => {
     )
     .pipe(
       pug({
-        basedir: 'src',
+        basedir: 'src/pug',
         pretty: true,
       })
     )

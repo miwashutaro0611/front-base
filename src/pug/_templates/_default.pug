@@ -3,12 +3,12 @@ include _data/_variable
 include _data/_meta
 include _data/_gtm
 //- components
-include /module/_GlobalHeader
-include /module/_GlobalFooter
+include /_modules/_GlobalHeader
+include /_modules/_GlobalFooter
 
 
 block variables
-  - 
+  -
     var bodyClass = (relativePath.match(/^[a-zA-Z0-1\-\_]*?(?=\/)/) || 'top') + 'BodyWrapper'
 doctype html
 html(lang="ja")
