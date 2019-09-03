@@ -1,5 +1,5 @@
-const path = require('path')
-const appDir = path.resolve(__dirname, 'src')
+const { resolve } = require('path')
+const appDir = resolve(__dirname, 'src')
 
 module.exports = {
 	context: appDir,
