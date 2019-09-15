@@ -85,7 +85,6 @@
   },
   "dependencies": {
     "@barba/core": "^2.6.0",
-    "@barba/css": "^2.1.11",
     "viewport-extra": "^1.0.4"
   }
 }

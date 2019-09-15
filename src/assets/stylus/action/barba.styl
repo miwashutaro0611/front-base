@@ -1,17 +1,21 @@
-.barba-leave-active
-.barba-enter-active
-	transition opacity 450ms ease
-
-/*initial state*/
-.barba-leave
-	opacity 1
-
-.barba-enter
-	opacity 0
-
-/*ending state*/
-.barba-leave-to
-	opacity 0
-
-.barba-enter-to
-	opacity 1
+.mask
+	position fixed
+	top 0
+	left 0
+	z-index 10
+	display block
+	visibility hidden
+	width 100%
+	height 100%
+	background-color #333
+	transition-timing-function ease
+	transition-duration 0.5s
+	transition-property transform, visibility
+	transform rotateY(90deg)
+	transform-origin right
+	pointer-events none
+	&.is-close
+		visibility visible
+		transform rotateY(0)
+		transform-origin left
+		pointer-events auto
