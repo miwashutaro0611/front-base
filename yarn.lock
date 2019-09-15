@@ -133,6 +133,11 @@
     path-to-regexp "^3.0.0"
     run-async "^2.3.0"
 
+"@barba/css@^2.1.11":
+  version "2.1.11"
+  resolved "https://registry.yarnpkg.com/@barba/css/-/css-2.1.11.tgz#239d03b187d882c1a48fc2e9f620c00026a68299"
+  integrity sha512-vdBzyoCpffA9Og+JQ4HoB7KGXvsMXZJqB0cJQk5vy/lvzueJxtkzTaOfiVrAp+Cu3b8gfmFx3rRP2zC2LNng5Q==
+
 "@fimbul/bifrost@^0.17.0":
   version "0.17.0"
   resolved "https://registry.yarnpkg.com/@fimbul/bifrost/-/bifrost-0.17.0.tgz#f0383ba7e40992e3193dc87e2ddfde2ad62a9cf4"
