@@ -6,6 +6,7 @@
     "rulesDirectory": [ "tslint-plugin-prettier" ],
     "rules": {
         "import-name": false,
+        "increment-decrement": true,
         "prettier": [
             true, {
                 "singleQuote": true,
