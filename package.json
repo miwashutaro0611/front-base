@@ -84,7 +84,7 @@
     "yarn": "^1.17.3"
   },
   "dependencies": {
-    "@barba/core": "^2.6.0",
+    "barba.js": "^1.0.0",
     "viewport-extra": "^1.0.4"
   }
 }

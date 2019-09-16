@@ -18,8 +18,8 @@ html(lang="ja")
   body(class=bodyClass)
     +gtm
     +GlobalHeader(path)
-    .wrappper(data-barba="wrapper")
-      main(data-barba="container" data-barba-namespace=pageName)
+    #barba-wrapper.wrappper
+      main.barba-container
         block content
     +GlobalFooter(path)
     .mask

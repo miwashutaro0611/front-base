@@ -125,14 +125,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@barba/core@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@barba/core/-/core-2.6.0.tgz#f4a6754bbfbcdf9b199679825ff11f51780cec97"
-  integrity sha512-J+umrsK6tT1PevD32jg+N4j4CLvnXgxhHCfbJqlP/i+lTeS18wQUmvZwqU7QDr5hUBsfu8AKE/xwEqZthd7RzA==
-  dependencies:
-    path-to-regexp "^3.0.0"
-    run-async "^2.3.0"
-
 "@fimbul/bifrost@^0.17.0":
   version "0.17.0"
   resolved "https://registry.yarnpkg.com/@fimbul/bifrost/-/bifrost-0.17.0.tgz#f0383ba7e40992e3193dc87e2ddfde2ad62a9cf4"
@@ -1515,6 +1507,11 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
+
+barba.js@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/barba.js/-/barba.js-1.0.0.tgz#3c1d7358f0d3f87719cb1bdb775be417c9273f7d"
+  integrity sha1-PB1zWPDT+HcZyxvbd1vkF8knP30=
 
 base64-arraybuffer@0.1.5:
   version "0.1.5"
@@ -7080,11 +7077,6 @@ path-root@^0.1.1:
   dependencies:
     path-root-regex "^0.1.0"
 
-path-to-regexp@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-3.1.0.tgz#f45a9cc4dc6331ae8f131e0ce4fde8607f802367"
-  integrity sha512-PtHLisEvUOepjc+sStXxJ/pDV/s5UBTOKWJY2SOz3e6E/iN/jLknY9WL72kTwRrwXDUbZTEAtSnJbz2fF127DA==
-
 path-type@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-1.1.0.tgz#59c44f7ee491da704da415da5a4070ba4f8fe441"
@@ -8898,13 +8890,6 @@ rmc-feedback@^2.0.0:
   dependencies:
     babel-runtime "6.x"
     classnames "^2.2.5"
-
-run-async@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.3.0.tgz#0371ab4ae0bdd720d4166d7dfda64ff7a445a6c0"
-  integrity sha1-A3GrSuC91yDUFm19/aZP96RFpsA=
-  dependencies:
-    is-promise "^2.1.0"
 
 run-node@^1.0.0:
   version "1.0.0"
