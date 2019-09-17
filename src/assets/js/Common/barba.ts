@@ -34,4 +34,20 @@ Barba.Dispatcher.on(
     }
   }
 )
+Barba.Pjax.originalPreventCheck = Barba.Pjax.preventCheck
+Barba.Pjax.preventCheck = function(evt, element) {
+  if (element) {
+    const url = `${location.protocol}//${location.host}${location.pathname}`
+    const extractHash = element.href.replace(/#.*$/, '')
+    if (element.href.startsWith(`${location.protocol}//${location.host}`)) {
+      if (element.href.indexOf('#') > -1 && extractHash !== url) {
+        return true
+      }
+    }
+    if (!Barba.Pjax.originalPreventCheck(evt, element)) {
+      return false
+    }
+  }
+  return true
+}
 Barba.Pjax.start()

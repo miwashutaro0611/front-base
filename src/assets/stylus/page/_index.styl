@@ -3,7 +3,11 @@ body
 	background #ff0
 
 p
+	height 100vh
+	background #0ff
 	MixinWrapperWidth 1280px full
 	MixinFontSize 14 40
+	&:nth-child(even)
+		background #00f
 	+custom-breakpoint(1000)
 		font-size 20px
