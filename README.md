@@ -14,3 +14,8 @@ https://jackswim3411.hatenablog.com/entry/2019/06/14/045254
 - https://www.willstyle.co.jp/blog/1722/
 - https://barba.js.org/v1/index.html
 - https://www.evoworx.co.jp/blog/barbajs-transition/
+
+
+# sweet-scrollの参考リンク
+
+- http://webdesign-dackel.com/2015/12/17/sweet-scroll/

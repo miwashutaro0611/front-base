@@ -85,6 +85,7 @@
   },
   "dependencies": {
     "barba.js": "^1.0.0",
+    "sweet-scroll": "^4.0.0",
     "viewport-extra": "^1.0.4"
   }
 }
