@@ -11,3 +11,6 @@ https://jackswim3411.hatenablog.com/entry/2019/06/14/045254
 # barbaについての参考url
 
 - https://liginc.co.jp/476913
+- https://www.willstyle.co.jp/blog/1722/
+- https://barba.js.org/v1/index.html
+- https://www.evoworx.co.jp/blog/barbajs-transition/
