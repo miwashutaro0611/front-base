@@ -50,4 +50,32 @@ Barba.Pjax.preventCheck = function(evt, element) {
   }
   return true
 }
+
+const scroll = () => {
+  const headerFixed = false
+  if (location.hash) {
+    const anchor = document.querySelector(location.hash)
+    if (anchor) {
+      const rect = anchor.getBoundingClientRect()
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      let top = rect.top + scrollTop
+      if (headerFixed) {
+        const header = document.getElementById('header')
+        if (header) {
+          top = top - header.clientHeight
+        }
+      }
+      window.scrollTo(0, top)
+    } else {
+      // アンカー先が存在しなければページトップに
+      window.scrollTo(0, 0)
+    }
+  } else {
+    // URLに「#」が存在しなければページトップに
+    window.scrollTo(0, 0)
+  }
+}
+Barba.Dispatcher.on('transitionCompleted', scroll)
+
 Barba.Pjax.start()
+Barba.Prefetch.init()
