@@ -1,4 +1,4 @@
-const { src, dest, watch, parallel } = require('gulp')
+const { src, dest, watch, parallel, series } = require('gulp')
 const pug = require('gulp-pug')
 const data = require('gulp-data')
 const stylus = require('gulp-stylus')
@@ -12,6 +12,7 @@ const browserSync = require('browser-sync')
 const webpackStream = require('webpack-stream')
 const webpack = require('webpack')
 const htmlmin = require('gulp-htmlmin')
+const purgecss = require('gulp-purgecss')
 const mode = require('gulp-mode')({
   modes: ['production', 'development'],
   default: 'development',
@@ -98,7 +99,10 @@ const stylusFunc = () => {
     )
     .pipe(stylus())
     .pipe(postcss([cssnext(browsers)]))
-    .pipe(cleanCSS())
+    .pipe(mode.production(
+      purgecss({content: ['dist/**/*.html']})
+    ))
+    // .pipe(cleanCSS())
     .pipe(mode.development(sourcemaps.write()))
     .pipe(dest(`${destPath.assets}css/`))
     .pipe(browserSync.reload({ stream: true }))
@@ -139,4 +143,4 @@ const watchFiles = () => {
 
 exports.default = parallel(watchFiles, [htmlFunc, stylusFunc, jsFunc, imageFunc, staticFunc, fontsFunc], browserSyncFunc)
 
-exports.build = parallel(htmlFunc, stylusFunc, jsFunc, imageFunc, staticFunc, fontsFunc)
+exports.build = series( parallel(htmlFunc, jsFunc, imageFunc, staticFunc, fontsFunc), stylusFunc)
