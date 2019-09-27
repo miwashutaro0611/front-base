@@ -1,0 +1,6 @@
+[build]
+  command = "yarn deploy"
+  publish = "dist/"
+
+[context.master]
+  command = "yarn build"
