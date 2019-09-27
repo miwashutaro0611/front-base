@@ -21,11 +21,11 @@
     }
   },
   "lint-staged": {
-    "*.styl": [
+    "src/*.styl": [
       "yarn run commit:stylint",
       "git add"
     ],
-    "*.ts": [
+    "src/*.ts": [
       "yarn run commit:tslint",
       "git add"
     ]
