@@ -11,8 +11,9 @@
     "build:develop": "rm -rf dist/ && gulp build",
     "build": "rm -rf dist/ && gulp build --production",
     "deploy": "gulp build --production && mv ._headers dist/_headers",
-    "commit:stylint": "yarn run supremacy && yarn run stylint",
-    "commit:tslint": "yarn run tslint",
+    "deploy:master": "gulp build --production",
+    "commit:stylint": "yarn supremacy && yarn stylint",
+    "commit:tslint": "yarn tslint",
     "codecrumbs": "codecrumbs -d src/assets/js -e src/assets/js/common.ts"
   },
   "husky": {
@@ -22,11 +23,11 @@
   },
   "lint-staged": {
     "src/*.styl": [
-      "yarn run commit:stylint",
+      "yarn commit:stylint",
       "git add"
     ],
     "src/*.ts": [
-      "yarn run commit:tslint",
+      "yarn commit:tslint",
       "git add"
     ]
   },
