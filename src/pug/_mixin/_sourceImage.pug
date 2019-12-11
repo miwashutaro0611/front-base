@@ -1,0 +1,30 @@
+mixin sourceImg(fileName, extension = 'png', altName = '', type = 'multi', pagePath = imgPath)
+  - if (type == 'multi')
+    picture
+      source(
+        media=`(min-width:${pcSize}px)`
+        srcset=`
+          ${pagePath}${fileName}.${extension} 1x,
+          ${pagePath}${fileName}@2x.${extension} 2x
+        `
+      )
+      source(
+        media=`(max-width:${pcSize - 1}px)`
+        srcset=`
+          ${pagePath}${fileName}-sp.${extension} 1x,
+          ${pagePath}${fileName}-sp@2x.${extension} 2x
+        `
+      )
+      img(
+        src=`${pagePath}${fileName}.${extension}`
+        alt= altName
+      )
+  - else
+    img(
+      srcset=`
+        ${pagePath}${fileName}.${extension} 1x,
+        ${pagePath}${fileName}@2x.${extension} 2x
+      `
+      src=`${pagePath}${fileName}.${extension}`
+      alt= altName
+    )

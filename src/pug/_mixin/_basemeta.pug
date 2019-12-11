@@ -1,13 +1,16 @@
 mixin basemeta()
   -
-    var MetaTitle = Title || ""
-    var MetaDescription = Description || ""
-  - if (MetaTitle == "" || MetaTitle == "top")
+    var MetaTitle = Title || ''
+    var MetaDescription = Description || ''
+    var MetaNoindex = Noindex ? true : false
+  - if (MetaTitle == '' || MetaTitle == 'top')
     - MetaTitle = GlobalTitle
     - MetaDescription = GlobalDescription
   - else
-    - MetaTitle = MetaTitle + " | " + GlobalTitle
-    - if (MetaDescription == "")
-      - MetaDescription = Title + "のページです。" + GlobalDescription
+    - MetaTitle = `${MetaTitle} | ${GlobalTitle}`
+    - if (MetaDescription == '')
+      - MetaDescription = `${Title}のページです。${GlobalDescription}`
   title #{MetaTitle}
-  meta(name="description" content=MetaDescription)
+  meta(name='description' content=MetaDescription)
+  - if (MetaNoindex)
+    meta(name='robots' content='noindex,nofollow')

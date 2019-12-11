@@ -1,9 +1,11 @@
 extends /_templates/_default
 append variables
   -
-    var path = "./"
-    var Title = "top"
-    var Description = ""
+    var path = './'
+    var Title = 'top'
+    var Description = ''
+    var imgPath = `${path}assets/img/`
+    var Noindex = false // ページをnoindexにさせる場合true
 block content
   p.p-top トップページ
   p.c-text コンポーネントのスタイル
