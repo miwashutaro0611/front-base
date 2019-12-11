@@ -16,17 +16,12 @@
     "commit:tslint": "yarn tslint",
     "codecrumbs": "codecrumbs -d src/assets/js -e src/assets/js/common.ts"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "src/*.styl": [
+    "*.styl": [
       "yarn commit:stylint",
       "git add"
     ],
-    "src/*.ts": [
+    "*.ts": [
       "yarn commit:tslint",
       "git add"
     ]
@@ -58,7 +53,7 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-stylus": "^2.7.0",
     "html-webpack-plugin": "^3.2.0",
-    "husky": "^3.1.0",
+    "husky": "3.1.0",
     "lint-staged": "^9.5.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",
@@ -78,7 +73,6 @@
     "tslint-plugin-prettier": "^2.0.1",
     "tsutils": "^3.17.1",
     "typescript": "^3.7.3",
-    "url-loader": "^2.2.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-merge": "^4.2.2",
