@@ -57,7 +57,7 @@ const htmlFunc = () => {
     .pipe(
       data(file => {
         return {
-          relativePath: file.history[0].replace(file.base, ''),
+          'relativePath': file.history[0].replace(file.base, '') // ページ情報仮置き
         }
       })
     )
