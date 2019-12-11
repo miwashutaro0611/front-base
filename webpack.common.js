@@ -19,7 +19,7 @@ module.exports = {
 				use: [
 				'ts-loader',
 				{
-					loader: 'tslint-loader',
+					loader: 'eslint-loader',
 					options: {
 						typeCheck: true,
 					},
