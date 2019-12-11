@@ -14,11 +14,11 @@ doctype html
 html(lang="ja")
   head
     +meta(path)
+    script(src=path+"assets/js/bundle.js" defer)
     script(src=path+"assets/js/head.js")
   body(class=bodyClass)
     //- +gtm
     +GlobalHeader(path)
     block content
     +GlobalFooter(path)
-    script(src=path+"assets/js/bundle.js")
     script(src='//instant.page/1.1.0', type='module', integrity='sha384-EwBObn5QAxP8f09iemwAJljc+sU+eUXeL9vSBw1eNmVarwhKk2F9vBEpaN9rsrtp')
