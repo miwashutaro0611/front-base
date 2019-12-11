@@ -6,14 +6,14 @@
   "scripts": {
     "start": "gulp",
     "supremacy": "stylus-supremacy format ./src/**/*.styl -p ./stylus-supremacy.json -r",
-    "tslint": "tslint --fix src/**/*.ts",
+    "eslint": "eslint --fix src/**/*.ts",
     "stylint": "stylint src/assets/stylus",
     "build:develop": "rm -rf dist/ && gulp build",
     "build": "rm -rf dist/ && gulp build --production",
     "deploy": "gulp build --production && mv ._headers dist/_headers",
     "deploy:master": "gulp build --production",
     "commit:stylint": "yarn supremacy && yarn stylint",
-    "commit:tslint": "yarn tslint",
+    "commit:eslint": "yarn eslint",
     "codecrumbs": "codecrumbs -d src/assets/js -e src/assets/js/common.ts"
   },
   "lint-staged": {
@@ -22,7 +22,7 @@
       "git add"
     ],
     "*.ts": [
-      "yarn commit:tslint",
+      "yarn commit:eslint",
       "git add"
     ]
   },
@@ -35,10 +35,14 @@
     "@babel/preset-env": "^7.7.6",
     "@babel/runtime": "^7.7.6",
     "@typescript-eslint/eslint-plugin": "^2.11.0",
+    "@typescript-eslint/parser": "^2.11.0",
     "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.7",
     "codecrumbs": "^1.7.3",
     "css-loader": "^3.3.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
@@ -66,12 +70,6 @@
     "stylus-loader": "^3.0.2",
     "stylus-supremacy": "^2.14.0",
     "ts-loader": "^6.2.1",
-    "tslint": "^5.20.1",
-    "tslint-config-airbnb": "^5.11.2",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-loader": "3.5.4",
-    "tslint-plugin-prettier": "^2.0.1",
-    "tsutils": "^3.17.1",
     "typescript": "^3.7.3",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
