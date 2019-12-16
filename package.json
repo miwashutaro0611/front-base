@@ -72,6 +72,7 @@
     "yarn": "^1.21.1"
   },
   "dependencies": {
+    "autoprefixer": "^9.7.3",
     "viewport-extra": "^1.0.4"
   }
 }

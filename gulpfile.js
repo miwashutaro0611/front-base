@@ -4,6 +4,7 @@ const data = require('gulp-data')
 const stylus = require('gulp-stylus')
 const postcss = require('gulp-postcss')
 const postcssPresetEnv = require('postcss-preset-env')
+const autoprefixer = require("autoprefixer")
 const plumber = require('gulp-plumber')
 const notify = require('gulp-notify')
 const sourcemaps = require('gulp-sourcemaps')
@@ -80,16 +81,6 @@ const htmlFunc = () => {
     .pipe(browserSync.reload({ stream: true }))
 }
 
-const browsers = [
-  'last 2 versions',
-  '> 5%',
-  'ie = 11',
-  'not ie <= 10',
-  'ios >= 8',
-  'and_chr >= 5',
-  'Android >= 5',
-]
-
 const stylusFunc = () => {
   return src('src/assets/stylus/*.styl')
     .pipe(mode.development(sourcemaps.init()))
@@ -97,7 +88,7 @@ const stylusFunc = () => {
       plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })
     )
     .pipe(stylus())
-    .pipe(postcss([postcssPresetEnv(browsers)]))
+    .pipe(postcss([postcssPresetEnv(autoprefixer)]))
     .pipe(cleanCSS())
     .pipe(mode.development(sourcemaps.write()))
     .pipe(dest(`${destPath.assets}css/`))
