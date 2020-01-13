@@ -4,7 +4,7 @@ const data = require('gulp-data')
 const stylus = require('gulp-stylus')
 const postcss = require('gulp-postcss')
 const postcssPresetEnv = require('postcss-preset-env')
-const autoprefixer = require("autoprefixer")
+const autoprefixer = require('autoprefixer')
 const plumber = require('gulp-plumber')
 const notify = require('gulp-notify')
 const sourcemaps = require('gulp-sourcemaps')
@@ -25,10 +25,7 @@ const webpackConfigProd = require('./webpack.prod')
 const webpackConfig = isProduction ? webpackConfigProd : webpackConfigDev
 
 const srcPath = {
-  html: [
-    'src/pug/**/*.pug',
-    '!' + 'src/pug/**/_*.pug',
-  ],
+  html: ['src/pug/**/*.pug', '!' + 'src/pug/**/_*.pug'],
   stylus: 'src/**/*.styl',
   js: 'src/**/*.ts',
   image: 'src/assets/img/**/*',
@@ -52,13 +49,11 @@ const jsFunc = () => {
 
 const htmlFunc = () => {
   return src(srcPath.html)
-    .pipe(
-      plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })
-    )
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(
       data(file => {
         return {
-          'relativePath': file.history[0].replace(file.base, '') // ページ情報仮置き
+          relativePath: file.history[0].replace(file.base, ''), // ページ情報仮置き
         }
       })
     )
@@ -84,9 +79,7 @@ const htmlFunc = () => {
 const stylusFunc = () => {
   return src('src/assets/stylus/*.styl')
     .pipe(mode.development(sourcemaps.init()))
-    .pipe(
-      plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })
-    )
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(stylus())
     .pipe(postcss([postcssPresetEnv(autoprefixer)]))
     .pipe(cleanCSS())
@@ -96,18 +89,15 @@ const stylusFunc = () => {
 }
 
 const imageFunc = () => {
-  return src(srcPath.image)
-    .pipe(dest(`${destPath.assets}img/`))
+  return src(srcPath.image).pipe(dest(`${destPath.assets}img/`))
 }
 
 const fontsFunc = () => {
-  return src(srcPath.fonts)
-    .pipe(dest(`${destPath.assets}fonts/`))
+  return src(srcPath.fonts).pipe(dest(`${destPath.assets}fonts/`))
 }
 
 const staticFunc = () => {
-  return src(srcPath.static)
-    .pipe(dest(destPath.root))
+  return src(srcPath.static).pipe(dest(destPath.root))
 }
 
 const browserSyncFunc = () => {
@@ -128,6 +118,10 @@ const watchFiles = () => {
   watch(srcPath.fonts, fontsFunc)
 }
 
-exports.default = parallel(watchFiles, [htmlFunc, stylusFunc, jsFunc, imageFunc, staticFunc, fontsFunc], browserSyncFunc)
+exports.default = parallel(
+  watchFiles,
+  [htmlFunc, stylusFunc, jsFunc, imageFunc, staticFunc, fontsFunc],
+  browserSyncFunc
+)
 
 exports.build = parallel(htmlFunc, stylusFunc, jsFunc, imageFunc, staticFunc, fontsFunc)
