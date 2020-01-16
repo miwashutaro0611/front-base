@@ -30,12 +30,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.8.0",
-    "@babel/plugin-transform-runtime": "^7.8.0",
-    "@babel/preset-env": "^7.8.0",
-    "@babel/runtime": "^7.8.0",
-    "@typescript-eslint/eslint-plugin": "^2.15.0",
-    "@typescript-eslint/parser": "^2.15.0",
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/runtime": "^7.8.3",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
     "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.7",
     "codecrumbs": "^1.7.3",
@@ -54,7 +54,7 @@
     "gulp-pug": "^4.0.1",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-stylus": "^2.7.0",
-    "husky": "4.0.7",
+    "husky": "4.0.10",
     "lint-staged": "^9.5.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",
@@ -64,7 +64,7 @@
     "stylus": "^0.54.7",
     "stylus-supremacy": "^2.14.0",
     "ts-loader": "^6.2.1",
-    "ts-node": "^8.6.1",
+    "ts-node": "^8.6.2",
     "typescript": "^3.7.4",
     "typescript-require": "^0.2.10",
     "webpack": "^4.41.5",
@@ -74,7 +74,7 @@
     "yarn": "^1.21.1"
   },
   "dependencies": {
-    "autoprefixer": "^9.7.3",
+    "autoprefixer": "^9.7.4",
     "viewport-extra": "^1.0.4"
   }
 }
