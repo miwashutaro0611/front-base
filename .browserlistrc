@@ -1,0 +1,8 @@
+# Browsers that we support
+# https://browserl.ist/?q=%3E+1%25+in+JP%2C+ios+%3E%3D+9%2C+android+%3E+5%2C+not+dead%2C+not+ie+11
+
+> 1% in JP
+ios >= 9
+android > 5
+not dead
+not ie 11
