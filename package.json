@@ -14,6 +14,7 @@
     "deploy:master": "gulp build --production",
     "commit:stylint": "yarn supremacy && yarn stylint",
     "commit:eslint": "yarn eslint",
+    "wbuild": "webpack --config webpack.dev.js",
     "codecrumbs": "codecrumbs -d src/assets/js -e src/assets/js/common.ts"
   },
   "lint-staged": {
@@ -55,11 +56,13 @@
     "gulp-pug": "^4.0.1",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-stylus": "^2.7.0",
+    "html-webpack-plugin": "^3.2.0",
     "husky": "4.2.1",
     "lint-staged": "^10.0.7",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",
     "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
     "stylint": "^2.0.0",
     "stylint-stylish": "^2.0.0",
     "stylus": "^0.54.7",

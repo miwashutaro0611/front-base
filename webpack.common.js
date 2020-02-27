@@ -1,7 +1,9 @@
 const { resolve } = require('path')
+const merge = require('webpack-merge')
+const pages = require('./webpack.pages.js')
 const appDir = resolve(__dirname, 'src')
 
-module.exports = {
+module.exports = merge(pages, {
 	context: appDir,
 	entry: {
 		bundle: './assets/js/common.ts',
@@ -25,10 +27,22 @@ module.exports = {
 					},
 				}
 				],
+			},
+			{
+				test: /\.pug$/,
+				use: [
+					{
+						loader: 'pug-loader',
+						options: {
+							pretty: true,
+							root: resolve(appDir, 'pug'),
+						}
+					}
+				]
 			}
 		]
 	},
 	resolve: {
 		extensions: [".ts"]
 	}
-}
+})
