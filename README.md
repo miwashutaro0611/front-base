@@ -9,3 +9,7 @@ https://jackswim3411.hatenablog.com/entry/2019/06/14/045254
 # stylus hoverの書き方
 
 - http://stylus-lang.com/docs/selectors.html#ranges-in-partial-references
+
+# pug-lintのルール一覧
+
+https://github.com/pugjs/pug-lint/blob/master/docs/rules.md

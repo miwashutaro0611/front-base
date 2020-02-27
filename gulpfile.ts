@@ -1,5 +1,6 @@
 const { src, dest, watch, parallel } = require('gulp')
 const pug = require('gulp-pug')
+const pugLinter = require('gulp-pug-linter')
 const data = require('gulp-data')
 const stylus = require('gulp-stylus')
 const postcss = require('gulp-postcss')
@@ -57,6 +58,7 @@ const htmlFunc = () => {
         }
       })
     )
+    .pipe(pugLinter({ reporter: 'default' }))
     .pipe(
       pug({
         basedir: 'src/pug',
