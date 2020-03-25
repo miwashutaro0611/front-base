@@ -13,7 +13,8 @@
     "prettier/@typescript-eslint"
   ],
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "prettier"
   ],
   "globals": {
     "window": true,
@@ -22,15 +23,7 @@
     "ga": true
   },
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "printWidth": 120,
-        "singleQuote": true,
-        "trailingComma": "es5",
-        "semi": false
-      }
-    ]
+    "prettier/prettier": "error"
   },
   "parserOptions": {
     "sourceType": "module",
