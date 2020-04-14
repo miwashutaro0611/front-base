@@ -17,14 +17,8 @@
     "codecrumbs": "codecrumbs -d src/assets/js -e src/assets/js/common.ts"
   },
   "lint-staged": {
-    "*.styl": [
-      "yarn commit:stylint",
-      "git add"
-    ],
-    "*.ts": [
-      "yarn commit:eslint",
-      "git add"
-    ]
+    "*.styl": [ "yarn commit:stylint" ],
+    "*.ts": [ "yarn commit:eslint" ]
   },
   "keywords": [],
   "author": "",
