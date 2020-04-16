@@ -23,7 +23,8 @@
       "yarn commit:stylint"
     ],
     "*.ts": [
-      "yarn commit:eslint"
+      "yarn commit:eslint",
+      "yarn jest"
     ]
   },
   "keywords": [],
