@@ -5,3 +5,5 @@ const hello = (name: string): string => {
 const word = 'World'
 
 console.log(hello(word))
+
+export default hello
