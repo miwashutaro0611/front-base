@@ -15,6 +15,8 @@
     "commit:stylint": "yarn supremacy && yarn stylint",
     "commit:eslint": "yarn eslint",
     "wbuild": "webpack --config webpack.dev.js",
+    "clear": "rm -rf dist",
+    "b": "yarn clear && yarn wbuild",
     "codecrumbs": "codecrumbs -d src/assets/js -e src/assets/js/common.ts"
   },
   "lint-staged": {

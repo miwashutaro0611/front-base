@@ -1,7 +1,14 @@
-const { resolve } = require('path')
+const { resolve, join } = require('path')
 const merge = require('webpack-merge')
 const pages = require('./webpack.pages.js')
 const appDir = resolve(__dirname, 'src')
+const buildDir = resolve(__dirname, 'dist')
+const assetsPath = {
+  basePath: 'assets',
+  jsPath: 'assets/js',
+	cssPath: 'assets/css',
+	staticPath: 'assets/static',
+}
 
 module.exports = merge(pages, {
 	context: appDir,
@@ -10,7 +17,10 @@ module.exports = merge(pages, {
 		head: './assets/js/head.ts'
 	},
 	output: {
-		filename: '[name].js'
+		path: buildDir,
+		publicPath: './',
+    filename: join(assetsPath.jsPath, '[name]-[hash].js'),
+    chunkFilename: join(assetsPath.jsPath, '[name]-[hash].bundle.js')
 	},
 	module: {
 		rules: [
