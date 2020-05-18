@@ -19,7 +19,7 @@ module.exports = merge(pages, {
 	output: {
 		path: buildDir,
 		publicPath: './',
-    filename: join(assetsPath.jsPath, '[name]-[hash].js'),
+    filename: join(assetsPath.jsPath, '[name].js'),
     chunkFilename: join(assetsPath.jsPath, '[name]-[hash].bundle.js')
 	},
 	module: {
