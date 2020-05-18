@@ -1,4 +1,8 @@
 const { resolve, join } = require('path')
+
+const autoprefixer = require('autoprefixer')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
 const merge = require('webpack-merge')
 const pages = require('./webpack.pages.js')
 const appDir = resolve(__dirname, 'src')
@@ -39,6 +43,32 @@ module.exports = merge(pages, {
 				],
 			},
 			{
+        test: /\.styl$/,
+        exclude: /node_modules/,
+        use: [
+					{ loader: 'style-loader' },
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [
+                autoprefixer({
+                  grid: true,
+                  flexbox: true
+                })
+              ]
+            }
+          },
+          'stylus-loader',
+        ]
+      },
+			{
 				test: /\.pug$/,
 				use: [
 					{
@@ -52,6 +82,13 @@ module.exports = merge(pages, {
 			}
 		]
 	},
+	plugins: [
+		new MiniCssExtractPlugin({
+			filename: join(assetsPath.cssPath, '[name].css'),
+      chunkFilename: join(assetsPath.cssPath, '[name]-[hash].css'),
+      ignoreOrder: true
+		}),
+	],
 	resolve: {
 		extensions: [".ts"]
 	}
