@@ -2,6 +2,7 @@ const { resolve, join } = require('path')
 
 const autoprefixer = require('autoprefixer')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 const merge = require('webpack-merge')
 const pages = require('./webpack.pages.js')
@@ -11,7 +12,9 @@ const assetsPath = {
   basePath: 'assets',
   jsPath: 'assets/js',
 	cssPath: 'assets/css',
-	staticPath: 'assets/static',
+	imgPath: 'assets/img',
+	fontPath: 'assets/fonts',
+	staticPath: 'static',
 }
 
 module.exports = merge(pages, {
@@ -83,6 +86,30 @@ module.exports = merge(pages, {
 		]
 	},
 	plugins: [
+		new CopyPlugin({
+      patterns: [
+        {
+					from: assetsPath.imgPath,
+					to: assetsPath.imgPath
+				},
+      ],
+		}),
+		new CopyPlugin({
+      patterns: [
+        {
+					from: assetsPath.staticPath,
+					to: ''
+				},
+      ],
+		}),
+		new CopyPlugin({
+      patterns: [
+        {
+					from: assetsPath.fontPath,
+					to: assetsPath.fontPath
+				},
+      ],
+    }),
 		new MiniCssExtractPlugin({
 			filename: join(assetsPath.cssPath, '[name].css'),
       chunkFilename: join(assetsPath.cssPath, '[name]-[hash].css'),
