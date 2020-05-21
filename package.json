@@ -4,7 +4,7 @@
   "description": "",
   "main": "webpack.common.js",
   "scripts": {
-    "start": "gulp",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "supremacy": "stylus-supremacy format ./src/**/*.styl -p ./stylus-supremacy.json -r",
     "eslint": "eslint --fix src/**/*.ts",
     "stylint": "stylint src/assets/stylus",
@@ -81,6 +81,7 @@
     "typescript-require": "^0.2.10",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.2",
     "webpack-stream": "^5.2.1",
     "yarn": "^1.22.0"

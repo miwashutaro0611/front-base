@@ -117,6 +117,6 @@ module.exports = merge(pages, {
 		}),
 	],
 	resolve: {
-		extensions: [".ts"]
+		extensions: ['.ts', '.js']
 	}
 })
