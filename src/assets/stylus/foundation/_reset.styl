@@ -6,6 +6,7 @@
 ul
 ol
 	padding 0
+	list-style none
 
 body
 h1
@@ -13,8 +14,8 @@ h2
 h3
 h4
 p
-ul[class]
-ol[class]
+ul
+ol
 li
 figure
 figcaption
@@ -27,10 +28,6 @@ body
 	line-height 1.5
 	scroll-behavior smooth
 	text-rendering optimizeSpeed
-
-ul[class]
-ol[class]
-	list-style none
 
 a:not([class])
 	text-decoration-skip-ink auto
@@ -57,7 +54,7 @@ select
 	appearance none
 
 //@stylint off
-@media (prefers-reduced-motion: reduce)
+@media (prefers-reduced-motion reduce)
 	*
 		transition-duration 0.01ms !important
 		animation-duration 0.01ms !important
