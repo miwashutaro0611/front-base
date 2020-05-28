@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-var-requires: 0 */
 const { resolve } = require('path')
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
@@ -12,6 +13,6 @@ module.exports = merge(common, {
     contentBase: resolve(__dirname, 'dist'),
     watchContentBase: true,
     open: true,
-    port: 3000
+    port: 3000,
   },
 })

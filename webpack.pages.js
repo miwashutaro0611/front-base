@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-var-requires: 0 */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -5,12 +6,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'pug/index.pug',
-      inject: false
+      inject: false,
     }),
     new HtmlWebpackPlugin({
       filename: 'about/index.html',
       template: 'pug/about/index.pug',
-      inject: false
+      inject: false,
     }),
-  ]
+  ],
 }

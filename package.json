@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
     "supremacy": "stylus-supremacy format ./src/**/*.styl -p ./stylus-supremacy.json -r",
-    "eslint": "eslint --fix src/**/*.ts",
+    "eslint": "eslint --fix --ext .js,.ts --ignore-path .gitignore .",
     "stylint": "stylint src/assets/stylus",
     "lint": "yarn stylint && yarn eslint",
     "build:develop": "rm -rf dist/ && webpack --config webpack.dev.js",

@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-var-requires: 0 */
 const { resolve, join } = require('path')
 
 const autoprefixer = require('autoprefixer')
@@ -11,51 +12,51 @@ const buildDir = resolve(__dirname, 'dist')
 const assetsPath = {
   basePath: 'assets',
   jsPath: 'assets/js',
-	cssPath: 'assets/css',
-	imgPath: 'assets/img',
-	fontPath: 'assets/fonts',
-	staticPath: 'static',
+  cssPath: 'assets/css',
+  imgPath: 'assets/img',
+  fontPath: 'assets/fonts',
+  staticPath: 'static',
 }
 
 module.exports = merge(pages, {
-	context: appDir,
-	entry: {
-		bundle: './assets/js/common.ts',
-		head: './assets/js/head.ts'
-	},
-	output: {
-		path: buildDir,
-		publicPath: './',
+  context: appDir,
+  entry: {
+    bundle: './assets/js/common.ts',
+    head: './assets/js/head.ts',
+  },
+  output: {
+    path: buildDir,
+    publicPath: './',
     filename: join(assetsPath.jsPath, '[name].js'),
-    chunkFilename: join(assetsPath.jsPath, '[name]-[hash].bundle.js')
-	},
-	module: {
-		rules: [
-			{
-				enforce: 'pre',
-				test: /\.ts$/,
-				exclude: /node_modules/,
-				use: [
-				'ts-loader',
-				{
-					loader: 'eslint-loader',
-					options: {
-						typeCheck: true,
-					},
-				}
-				],
-			},
-			{
+    chunkFilename: join(assetsPath.jsPath, '[name]-[hash].bundle.js'),
+  },
+  module: {
+    rules: [
+      {
+        enforce: 'pre',
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: [
+          'ts-loader',
+          {
+            loader: 'eslint-loader',
+            options: {
+              typeCheck: true,
+            },
+          },
+        ],
+      },
+      {
         test: /\.styl$/,
         exclude: /node_modules/,
         use: [
-					{ loader: 'style-loader' },
+          { loader: 'style-loader' },
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
               url: false,
-            }
+            },
           },
           {
             loader: 'postcss-loader',
@@ -63,60 +64,60 @@ module.exports = merge(pages, {
               plugins: [
                 autoprefixer({
                   grid: true,
-                  flexbox: true
-                })
-              ]
-            }
+                  flexbox: true,
+                }),
+              ],
+            },
           },
           'stylus-loader',
-        ]
+        ],
       },
-			{
-				test: /\.pug$/,
-				use: [
-					{
-						loader: 'pug-loader',
-						options: {
-							pretty: true,
-							root: resolve(appDir, 'pug'),
-						}
-					}
-				]
-			}
-		]
-	},
-	plugins: [
-		new CopyPlugin({
+      {
+        test: /\.pug$/,
+        use: [
+          {
+            loader: 'pug-loader',
+            options: {
+              pretty: true,
+              root: resolve(appDir, 'pug'),
+            },
+          },
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new CopyPlugin({
       patterns: [
         {
-					from: assetsPath.imgPath,
-					to: assetsPath.imgPath
-				},
-      ],
-		}),
-		new CopyPlugin({
-      patterns: [
-        {
-					from: assetsPath.staticPath,
-					to: ''
-				},
-      ],
-		}),
-		new CopyPlugin({
-      patterns: [
-        {
-					from: assetsPath.fontPath,
-					to: assetsPath.fontPath
-				},
+          from: assetsPath.imgPath,
+          to: assetsPath.imgPath,
+        },
       ],
     }),
-		new MiniCssExtractPlugin({
-			filename: join(assetsPath.cssPath, '[name].css'),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: assetsPath.staticPath,
+          to: '',
+        },
+      ],
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: assetsPath.fontPath,
+          to: assetsPath.fontPath,
+        },
+      ],
+    }),
+    new MiniCssExtractPlugin({
+      filename: join(assetsPath.cssPath, '[name].css'),
       chunkFilename: join(assetsPath.cssPath, '[name]-[hash].css'),
-      ignoreOrder: true
-		}),
-	],
-	resolve: {
-		extensions: ['.ts', '.js']
-	}
+      ignoreOrder: true,
+    }),
+  ],
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
 })
