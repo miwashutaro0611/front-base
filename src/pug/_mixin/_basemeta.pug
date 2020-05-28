@@ -1,4 +1,4 @@
-mixin basemeta()
+mixin basemeta
   -
     var MetaTitle = Title || ''
     var MetaDescription = Description || ''
@@ -11,6 +11,6 @@ mixin basemeta()
     - if (MetaDescription == '')
       - MetaDescription = `${Title}のページです。${GlobalDescription}`
   title #{MetaTitle}
-  meta(name='description' content=MetaDescription)
+  meta(name='description', content=MetaDescription)
   - if (MetaNoindex)
-    meta(name='robots' content='noindex,nofollow')
+    meta(name='robots', content='noindex,nofollow')

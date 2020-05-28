@@ -17,9 +17,13 @@
     "commit:eslint": "yarn eslint",
     "codecrumbs": "codecrumbs -d src/assets/js -e src/assets/js/common.ts",
     "jest": "jest",
-    "jest-coverage": "yarn jest -- --coverage"
+    "jest-coverage": "yarn jest -- --coverage",
+    "pug-prettier": "prettier --write '**/*.pug'"
   },
   "lint-staged": {
+    "*.pug": [
+      "yarn pug-prettier"
+    ],
     "*.styl": [
       "yarn commit:stylint"
     ],
@@ -38,6 +42,7 @@
     "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/runtime": "^7.9.6",
+    "@prettier/plugin-pug": "^1.4.1",
     "@types/jest": "^25.2.3",
     "@types/node": "^14.0.4",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
@@ -58,7 +63,6 @@
     "postcss-loader": "^3.0.0",
     "prettier": "^2.0.5",
     "pug": "^2.0.4",
-    "pug-lint": "^2.6.0",
     "pug-loader": "^2.4.0",
     "style-loader": "^1.2.1",
     "stylint": "^2.0.0",
