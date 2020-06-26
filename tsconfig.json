@@ -5,5 +5,9 @@
     "module": "es2015", // TSのモジュールはES Modulesとして出力
     "moduleResolution": "node",
     "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["src/assets/*"]
+    },
   }
 }

@@ -1,2 +1,2 @@
-import '../stylus/style.styl'
-import './Action/alert'
+import '~/stylus/style.styl'
+import '~/js/Action/alert'

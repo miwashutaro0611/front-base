@@ -35,3 +35,9 @@ https://stylus-lang.com/
 ## TypeScript
 
 https://www.typescriptlang.org/
+
+# webpack alius設定 参考リンク
+
+- [React: import時のaliasを設定するときはWebpack、TypeScript、ESLintの3つを対応しなければならない件](https://qiita.com/Statham/items/8a1161c7816e360590f3)
+- [TypeScirptのプロジェクトにエイリアスを設定して絶対パスでimportするメモ](https://nametake.github.io/posts/2019/10/07/typescript-absolute-imports/)
+- [Jestでaliasを使ったモジュール参照を扱う](https://blog.mitsuruog.info/2019/06/jest-module-name-mapper)

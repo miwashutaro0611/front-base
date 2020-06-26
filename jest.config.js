@@ -4,4 +4,7 @@ module.exports = {
     '^.+\\.ts$': 'ts-jest',
   },
   testMatch: ['**/spec/**/*.spec.ts'],
+  moduleNameMapper: {
+    '^~(.+)': '<rootDir>/src/assets/$1',
+  },
 }

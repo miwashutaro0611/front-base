@@ -28,5 +28,12 @@
   "parserOptions": {
     "sourceType": "module",
     "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.common.js"
+      }
+    }
   }
 }

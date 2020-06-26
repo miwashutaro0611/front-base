@@ -118,6 +118,9 @@ module.exports = merge(pages, {
     }),
   ],
   resolve: {
+    alias: {
+      '~': resolve(appDir, 'assets'), // rootPath にはルートのパスが入る。
+    },
     extensions: ['.ts', '.js'],
   },
 })
