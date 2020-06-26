@@ -12,7 +12,6 @@ module.exports = merge(common, {
     writeToDisk: true,
     contentBase: resolve(__dirname, 'dist'),
     watchContentBase: true,
-    open: true,
     port: 3000,
   },
 })
