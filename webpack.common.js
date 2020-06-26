@@ -36,15 +36,7 @@ module.exports = merge(pages, {
         enforce: 'pre',
         test: /\.ts$/,
         exclude: /node_modules/,
-        use: [
-          'ts-loader',
-          {
-            loader: 'eslint-loader',
-            options: {
-              typeCheck: true,
-            },
-          },
-        ],
+        use: ['ts-loader'],
       },
       {
         test: /\.styl$/,
