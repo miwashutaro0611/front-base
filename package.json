@@ -21,18 +21,10 @@
     "pug-prettier": "prettier --write '**/*.pug'"
   },
   "lint-staged": {
-    "*.pug": [
-      "yarn pug-prettier"
-    ],
-    "*.styl": [
-      "yarn commit:stylint"
-    ],
-    "*.ts": [
-      "yarn commit:eslint"
-    ],
-    "*.spec.ts": [
-      "yarn jest"
-    ]
+    "*.pug": ["yarn pug-prettier"],
+    "*.styl": ["yarn commit:stylint"],
+    "*.ts": ["yarn commit:eslint"],
+    "*.spec.ts": ["yarn jest"]
   },
   "keywords": [],
   "author": "",
