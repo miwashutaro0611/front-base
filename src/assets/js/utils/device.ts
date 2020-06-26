@@ -8,7 +8,7 @@ import UAParser from 'ua-parser-js'
 
 const parser = new UAParser()
 
-const check = (parserParam, obj) => {
+const check = (parserParam: any, obj: string): string => {
   console.dir(parserParam[obj])
   return parserParam[obj]
 }
