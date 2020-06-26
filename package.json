@@ -43,21 +43,21 @@
     "@babel/preset-env": "^7.10.3",
     "@babel/runtime": "^7.10.3",
     "@prettier/plugin-pug": "^1.4.4",
-    "@types/jest": "^26.0.0",
-    "@types/node": "^14.0.13",
+    "@types/jest": "^26.0.3",
+    "@types/node": "^14.0.14",
     "@typescript-eslint/eslint-plugin": "^3.4.0",
     "@typescript-eslint/parser": "^3.4.0",
     "babel-loader": "^8.1.0",
     "codecrumbs": "^1.7.3",
     "copy-webpack-plugin": "^6.0.2",
     "css-loader": "^3.6.0",
-    "eslint": "^7.3.0",
+    "eslint": "^7.3.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-prettier": "^3.1.4",
     "html-webpack-plugin": "^4.3.0",
     "husky": "4.2.5",
-    "jest": "^26.0.1",
+    "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
     "mini-css-extract-plugin": "^0.9.0",
     "postcss-loader": "^3.0.0",
@@ -81,7 +81,7 @@
     "yarn": "^1.22.4"
   },
   "dependencies": {
-    "autoprefixer": "^9.8.2",
+    "autoprefixer": "^9.8.4",
     "viewport-extra": "^1.0.4"
   }
 }
