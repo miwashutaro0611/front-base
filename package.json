@@ -4,6 +4,7 @@
   "description": "",
   "main": "webpack.common.js",
   "scripts": {
+    "dev": "yarn start",
     "start": "webpack-dev-server --config webpack.dev.js",
     "supremacy": "stylus-supremacy format ./src/**/*.styl -p ./stylus-supremacy.json -r",
     "eslint": "eslint --fix --ext .js,.ts --ignore-path .gitignore .",
@@ -21,18 +22,10 @@
     "pug-prettier": "prettier --write '**/*.pug'"
   },
   "lint-staged": {
-    "*.pug": [
-      "yarn pug-prettier"
-    ],
-    "*.styl": [
-      "yarn commit:stylint"
-    ],
-    "*.ts": [
-      "yarn commit:eslint"
-    ],
-    "*.spec.ts": [
-      "yarn jest"
-    ]
+    "*.pug": ["yarn pug-prettier"],
+    "*.styl": ["yarn commit:stylint"],
+    "*.ts": ["yarn commit:eslint"],
+    "*.spec.ts": ["yarn jest"]
   },
   "keywords": [],
   "author": "",

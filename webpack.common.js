@@ -113,6 +113,6 @@ module.exports = merge(pages, {
     alias: {
       '~': resolve(appDir, 'assets'),
     },
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.js', '.styl'],
   },
 })
