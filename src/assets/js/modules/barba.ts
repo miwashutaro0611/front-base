@@ -5,3 +5,22 @@ import barbaPrefetch from '@barba/prefetch'
 barba.use(barbaCss)
 barba.use(barbaPrefetch)
 barba.init()
+
+const eventDelete = (e) => {
+  if (e.currentTarget.href === window.location.href) {
+    e.preventDefault()
+    e.stopPropagation()
+    return
+  }
+}
+
+const links = document.querySelectorAll('a[href]')
+links.forEach((link) => {
+  link.addEventListener(
+    'click',
+    (e) => {
+      eventDelete(e)
+    },
+    false
+  )
+})
