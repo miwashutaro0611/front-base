@@ -1,4 +1,4 @@
-import hello from '~/js/Action/alert'
+import hello from '~/js/modules/alert'
 
 test('Hello,World', () => {
   expect(hello('World')).toBe('Hello,World!')
