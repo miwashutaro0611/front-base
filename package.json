@@ -26,10 +26,18 @@
     "pug-prettier": "prettier --write '**/*.pug'"
   },
   "lint-staged": {
-    "*.pug": ["yarn pug-prettier"],
-    "*.styl": ["yarn commit:stylint"],
-    "*.ts": ["yarn commit:eslint"],
-    "*.spec.ts": ["yarn jest"]
+    "*.pug": [
+      "yarn pug-prettier"
+    ],
+    "*.styl": [
+      "yarn commit:stylint"
+    ],
+    "*.ts": [
+      "yarn commit:eslint"
+    ],
+    "*.spec.ts": [
+      "yarn jest"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -78,6 +86,8 @@
     "yarn": "^1.22.4"
   },
   "dependencies": {
+    "@barba/core": "^2.9.7",
+    "@barba/css": "^2.1.15",
     "autoprefixer": "^9.8.4",
     "ua-parser-js": "^0.7.21",
     "viewport-extra": "^1.0.4"
