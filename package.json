@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "webpack.common.js",
+  "engines": {
+    "npm": "please_use_yarn_instead",
+    "node": "12.16.1"
+  },
   "scripts": {
     "dev": "yarn start",
     "start": "webpack-dev-server --config webpack.dev.js",
