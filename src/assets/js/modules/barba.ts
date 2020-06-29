@@ -4,6 +4,11 @@ import barbaPrefetch from '@barba/prefetch'
 
 barba.use(barbaCss)
 barba.use(barbaPrefetch)
+
+barba.hooks.enter(() => {
+  window.scrollTo(0, 0)
+})
+
 barba.init()
 
 const eventDelete = (e) => {
