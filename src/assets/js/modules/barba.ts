@@ -37,7 +37,7 @@ const replaceHeadTags = (target) => {
   })
 }
 
-barba.hooks.afterEnter(({ next }) => {
+barba.hooks.beforeEnter(({ next }) => {
   console.log(next)
   replaceHeadTags(next)
 })
