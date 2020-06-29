@@ -7,7 +7,7 @@ mixin basemeta
     - MetaTitle = GlobalTitle
     - MetaDescription = GlobalDescription
   - else
-    - MetaTitle = `${MetaTitle} | ${GlobalTitle}`
+    - MetaTitle = `${MetaTitle}`
     - if (MetaDescription == '')
       - MetaDescription = `${Title}のページです。${GlobalDescription}`
   title #{MetaTitle}
