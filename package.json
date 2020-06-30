@@ -26,10 +26,18 @@
     "pug-prettier": "prettier --write '**/*.pug'"
   },
   "lint-staged": {
-    "*.pug": ["yarn pug-prettier"],
-    "*.styl": ["yarn commit:stylint"],
-    "*.ts": ["yarn commit:eslint"],
-    "*.spec.ts": ["yarn jest"]
+    "*.pug": [
+      "yarn pug-prettier"
+    ],
+    "*.styl": [
+      "yarn commit:stylint"
+    ],
+    "*.ts": [
+      "yarn commit:eslint"
+    ],
+    "*.spec.ts": [
+      "yarn jest"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -54,6 +62,8 @@
     "eslint-plugin-prettier": "^3.1.4",
     "html-webpack-plugin": "^4.3.0",
     "husky": "4.2.5",
+    "imagemin": "^7.0.1",
+    "imagemin-webp": "^6.0.0",
     "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
     "mini-css-extract-plugin": "^0.9.0",
