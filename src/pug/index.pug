@@ -4,7 +4,7 @@ block append variables
     var path = './'
     var Title = 'top'
     var Description = ''
-    var imgPath = `${path}assets/img-webp/`
+    var imgPath = `${path}assets/img/`
     var Noindex = false // ページをnoindexにさせる場合true
 block content
   p.p-top トップページ
@@ -14,4 +14,5 @@ block content
   p
     | テキスト2
   p
-    img(src=`${imgPath}/sample.webp`)
+    //- img(src=`${imgPath}/sample.webp`)
+    +sourceImg("sample", "png")
