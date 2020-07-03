@@ -23,13 +23,22 @@
     "codecrumbs": "codecrumbs -d src/assets/js -e src/assets/js/common.ts",
     "jest": "jest",
     "jest-coverage": "yarn jest -- --coverage",
-    "pug-prettier": "prettier --write '**/*.pug'"
+    "pug-prettier": "prettier --write '**/*.pug'",
+    "webp": "node script/create-webp.js"
   },
   "lint-staged": {
-    "*.pug": ["yarn pug-prettier"],
-    "*.styl": ["yarn commit:stylint"],
-    "*.ts": ["yarn commit:eslint"],
-    "*.spec.ts": ["yarn jest"]
+    "*.pug": [
+      "yarn pug-prettier"
+    ],
+    "*.styl": [
+      "yarn commit:stylint"
+    ],
+    "*.ts": [
+      "yarn commit:eslint"
+    ],
+    "*.spec.ts": [
+      "yarn jest"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -54,6 +63,8 @@
     "eslint-plugin-prettier": "^3.1.4",
     "html-webpack-plugin": "^4.3.0",
     "husky": "4.2.5",
+    "imagemin": "^7.0.1",
+    "imagemin-webp": "^6.0.0",
     "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
     "mini-css-extract-plugin": "^0.9.0",
@@ -79,6 +90,7 @@
   },
   "dependencies": {
     "autoprefixer": "^9.8.4",
+    "picturefill": "^3.0.3",
     "ua-parser-js": "^0.7.21",
     "viewport-extra": "^1.0.4"
   }
