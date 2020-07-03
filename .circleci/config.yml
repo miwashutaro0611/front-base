@@ -2,11 +2,11 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:12.18.1
     steps:
       - checkout
-      - run: npm install
-      - run: npm run test:ci
+      - run: yarn install
+      - run: yarn run test:ci
       - store_test_results:
         path: reports
       - store_artifacts:
