@@ -41,3 +41,8 @@ https://www.typescriptlang.org/
 - [React: import時のaliasを設定するときはWebpack、TypeScript、ESLintの3つを対応しなければならない件](https://qiita.com/Statham/items/8a1161c7816e360590f3)
 - [TypeScirptのプロジェクトにエイリアスを設定して絶対パスでimportするメモ](https://nametake.github.io/posts/2019/10/07/typescript-absolute-imports/)
 - [Jestでaliasを使ったモジュール参照を扱う](https://blog.mitsuruog.info/2019/06/jest-module-name-mapper)
+
+# circleCI参考リンク
+
+- [いまさらだけどCircleCIに入門したので分かりやすくまとめてみた](https://qiita.com/gold-kou/items/4c7e62434af455e977c2)
+- [Jestを通してCircleCIの基本を確認してみる](https://dev.classmethod.jp/articles/circleci-getting-started-jest/)
