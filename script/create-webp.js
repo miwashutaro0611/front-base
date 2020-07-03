@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-var-requires: 0 */
 // @see https://github.com/imagemin/imagemin/issues/191
 const imagemin = require('imagemin')
 const imageminWebp = require('imagemin-webp')
