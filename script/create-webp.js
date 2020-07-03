@@ -1,16 +1,33 @@
-/* eslint @typescript-eslint/no-var-requires: 0 */
-// https://github.com/imagemin/imagemin/issues/191
+// @see https://github.com/imagemin/imagemin/issues/191
 const imagemin = require('imagemin')
 const imageminWebp = require('imagemin-webp')
 const { lstatSync, readdirSync } = require('fs')
 const { join } = require('path')
 
+/**
+ * @description
+ * Script for compressing all our static images.
+ * (Mains current folder structure)
+ *
+ * ie. images_folder  => compressed/images_folder
+ */
+
+/**
+ * Output directory
+ * Where all the compressed images will go
+ */
 const OUTPUT_DIR = 'src/assets/img-webp/'
 
+/**
+ * List of input directories
+ */
 const INPUT_DIRS = ['src/assets/img/']
 
-// https://stackoverflow.com/a/40896897/4364074
-
+/**
+ * Helper functions to get directories / sub-directories
+ *
+ * @see https://stackoverflow.com/a/40896897/4364074
+ */
 const isDirectory = (source) => lstatSync(source).isDirectory()
 const getDirectories = (source) =>
   readdirSync(source)
