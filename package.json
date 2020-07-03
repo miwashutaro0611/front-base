@@ -23,7 +23,8 @@
     "codecrumbs": "codecrumbs -d src/assets/js -e src/assets/js/common.ts",
     "jest": "jest",
     "jest-coverage": "yarn jest -- --coverage",
-    "pug-prettier": "prettier --write '**/*.pug'"
+    "pug-prettier": "prettier --write '**/*.pug'",
+    "webp": "node script/create-webp.js"
   },
   "lint-staged": {
     "*.pug": [
