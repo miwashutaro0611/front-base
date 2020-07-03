@@ -1,6 +1,22 @@
-mixin sourceImg(fileName, extension = 'png', altName = '', type = 'multi', pagePath = imgPath)
+mixin sourceImg(fileName, extension = 'png', altName = '', type = 'multi', pagePath = imgPath, pageWebpPath = imgWebpPath)
   - if (type == 'multi')
     picture
+      source(
+        type='image/webp',
+        media=`(min-width:${pcSize}px)`,
+        srcset=`
+        ${pageWebpPath}${fileName}.webp 1x,
+        ${pageWebpPath}${fileName}@2x.webp 2x
+        `
+      )
+      source(
+        type='image/webp',
+        media=`(max-width:${pcSize - 1}px)`,
+        srcset=`
+        ${pageWebpPath}${fileName}-sp.webp 1x,
+        ${pageWebpPath}${fileName}-sp@2x.webp 2x
+        `
+      )
       source(
         media=`(min-width:${pcSize}px)`,
         srcset=`
@@ -17,11 +33,19 @@ mixin sourceImg(fileName, extension = 'png', altName = '', type = 'multi', pageP
       )
       img(src=`${pagePath}${fileName}.${extension}`, alt=altName)
   - else
-    img(
-      srcset=`
-        ${pagePath}${fileName}.${extension} 1x,
-        ${pagePath}${fileName}@2x.${extension} 2x
-      `,
-      src=`${pagePath}${fileName}.${extension}`,
-      alt=altName
-    )
+    picture
+      source(
+        type='image/webp',
+        srcset=`
+        ${pageWebpPath}${fileName}.webp 1x,
+        ${pageWebpPath}${fileName}@2x.webp 2x
+        `
+      )
+      img(
+        srcset=`
+          ${pagePath}${fileName}.${extension} 1x,
+          ${pagePath}${fileName}@2x.${extension} 2x
+        `,
+        src=`${pagePath}${fileName}.${extension}`,
+        alt=altName
+      )
