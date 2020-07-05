@@ -1,9 +1,9 @@
 MixinHoverAction(hoverTime = 0)
-	@media (hover: hover)
+	@media (hover hover)
 		&:hover
 			transition hoverTime s
 			{block}
-	@media all and (-ms-high-contrast: none)
+	@media all and (-ms-high-contrast none)
 		&:hover
 			transition hoverTime s
 			{block}

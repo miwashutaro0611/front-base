@@ -15,5 +15,9 @@ block content
   p
     | テキスト2
   p
-    //- img(src=`${imgPath}/sample.webp`)
-    +sourceImg("sample", "png")
+    a(href='/about') aboutページへ
+  p imgタグ
+  p
+    +sourceImg("sample", "png", 'ダミー画像')
+  p 背景画像
+  p.img-back

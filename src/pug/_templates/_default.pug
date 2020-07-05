@@ -18,8 +18,9 @@ html(lang='ja')
   body
     //- +gtm
     +GlobalHeader
-    main
-      block content
+    .mainWrapper(data-barba='wrapper')
+      main(data-barba='container')
+        block content
     +GlobalFooter
     script(
       src='//instant.page/1.1.0',

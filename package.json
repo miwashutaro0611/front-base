@@ -90,6 +90,9 @@
     "yarn": "^1.22.4"
   },
   "dependencies": {
+    "@barba/core": "^2.9.7",
+    "@barba/css": "^2.1.15",
+    "@barba/prefetch": "^2.1.10",
     "autoprefixer": "^9.8.4",
     "picturefill": "^3.0.3",
     "ua-parser-js": "^0.7.21",
