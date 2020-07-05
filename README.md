@@ -46,3 +46,9 @@ https://www.typescriptlang.org/
 
 - [いまさらだけどCircleCIに入門したので分かりやすくまとめてみた](https://qiita.com/gold-kou/items/4c7e62434af455e977c2)
 - [Jestを通してCircleCIの基本を確認してみる](https://dev.classmethod.jp/articles/circleci-getting-started-jest/)
+w
+# barbajs参考リンク
+
+- [Barba.jsを使うときに設定しておくと便利なスニペット](https://www.willstyle.co.jp/blog/1722/)
+- [Barba.js(Pjax)でのサイト作成で学んだ9の注意点。とその解決法。](https://leap-in.com/ja/notes-when-you-use-barba-js-2/)
+- [barba.js v2で簡単に非同期画面遷移を取り入れてページ高速化！](https://notes.sharesl.net/articles/50/)
