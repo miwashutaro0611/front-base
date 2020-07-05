@@ -46,7 +46,7 @@ https://www.typescriptlang.org/
 
 - [いまさらだけどCircleCIに入門したので分かりやすくまとめてみた](https://qiita.com/gold-kou/items/4c7e62434af455e977c2)
 - [Jestを通してCircleCIの基本を確認してみる](https://dev.classmethod.jp/articles/circleci-getting-started-jest/)
-w
+
 # barbajs参考リンク
 
 - [Barba.jsを使うときに設定しておくと便利なスニペット](https://www.willstyle.co.jp/blog/1722/)
