@@ -24,7 +24,7 @@
     "jest": "jest",
     "test:ci": "jest -i --ci --runInBand",
     "pug-prettier": "prettier --write '**/*.pug'",
-    "webp": "node script/create-webp.js"
+    "webp": "rm -rf ./src/assets/img-webp && mkdir ./src/assets/img-webp && node ./script/create-webp.js"
   },
   "lint-staged": {
     "*.pug": [
