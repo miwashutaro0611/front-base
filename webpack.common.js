@@ -27,9 +27,8 @@ module.exports = merge(pages, {
   },
   output: {
     path: buildDir,
-    publicPath: './',
-    filename: join(assetsPath.jsPath, '[name].js'),
-    chunkFilename: join(assetsPath.jsPath, '[name]-[hash].bundle.js'),
+    publicPath: '/',
+    filename: join(assetsPath.jsPath, '[name]-[hash].js'),
   },
   module: {
     rules: [
@@ -113,8 +112,7 @@ module.exports = merge(pages, {
       ],
     }),
     new MiniCssExtractPlugin({
-      filename: join(assetsPath.cssPath, '[name].css'),
-      chunkFilename: join(assetsPath.cssPath, '[name]-[hash].css'),
+      filename: join(assetsPath.cssPath, '[name]-[hash].css'),
       ignoreOrder: true,
     }),
   ],
