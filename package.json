@@ -1,8 +1,7 @@
 {
   "name": "front-base",
-  "version": "1.0.0",
-  "description": "",
-  "main": "webpack.common.js",
+  "private": true,
+  "license": "UNLICENSED",
   "engines": {
     "npm": "please_use_yarn_instead",
     "node": "12.18.1"
@@ -40,9 +39,6 @@
       "yarn jest"
     ]
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@babel/plugin-transform-runtime": "^7.10.4",
