@@ -25,6 +25,7 @@ function getHeadAndBodyChunks(chunks) {
 function addAttributesToTag(tag, name, attributes) {
   if (tag.attributes.src) {
     // const regex = new RegExp(`(\/${name}\-\+\.)|(${name}\-\\.)`)
+    // eslint-disable-next-line no-useless-escape
     const regex = /bundle\-[a-zA-Z0-9]/
     // console.log('-- start --')
     // console.log(tag.attributes.src)
