@@ -5,7 +5,7 @@ const autoprefixer = require('autoprefixer')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 
-const merge = require('webpack-merge')
+const { merge } = require('webpack-merge')
 const pages = require('./webpack.pages.js')
 const appDir = resolve(__dirname, 'src')
 const buildDir = resolve(__dirname, 'dist')
