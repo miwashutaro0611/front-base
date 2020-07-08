@@ -96,6 +96,7 @@
     "autoprefixer": "^9.8.4",
     "picturefill": "^3.0.3",
     "ua-parser-js": "^0.7.21",
-    "viewport-extra": "^1.0.4"
+    "viewport-extra": "^1.0.4",
+    "what-input": "^5.2.10"
   }
 }
