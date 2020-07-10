@@ -2,23 +2,26 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackInjector = require('./webpack.htmlinjector')
 
+const commonOptions = {
+  filename: '',
+  template: '',
+  chunks: ['bundle', 'head'],
+  chunksConfig: {
+    defer: ['bundle'],
+  },
+}
+
 module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
+      ...commonOptions,
       filename: 'index.html',
       template: 'pug/index.pug',
-      chunks: ['bundle', 'head'],
-      chunksConfig: {
-        defer: ['bundle'],
-      },
     }),
     new HtmlWebpackPlugin({
+      ...commonOptions,
       filename: 'about/index.html',
       template: 'pug/about/index.pug',
-      chunks: ['bundle', 'head'],
-      chunksConfig: {
-        defer: ['bundle'],
-      },
     }),
     new HtmlWebpackInjector(),
   ],
