@@ -15,11 +15,12 @@ html(lang='ja')
     +meta
   body
     //- +gtm
-    +GlobalHeader
-    #luxy.mainWrapper(data-barba='wrapper')
-      main(data-barba='container')
-        block content
-    +GlobalFooter
+    #luxy
+      +GlobalHeader
+      main.globalMain(data-barba='wrapper')
+        .mainWrapper(data-barba='container')
+          block content
+      +GlobalFooter
     //- script(
     //-   src='//instant.page/1.1.0',
     //-   type='module',
