@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="front-base" tests="4" failures="0" time="12.293">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2020-07-22T17:29:55" time="9.49" tests="1">
+    <testcase classname="-Hello,World" name="-Hello,World" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2020-07-22T17:29:55" time="9.658" tests="3">
+    <testcase classname="-DeviceCheck - Browser" name="-DeviceCheck - Browser" time="0.018">
+    </testcase>
+    <testcase classname="-DeviceCheck - Device" name="-DeviceCheck - Device" time="0.003">
+    </testcase>
+    <testcase classname="-DeviceCheck - OS" name="-DeviceCheck - OS" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>
