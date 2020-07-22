@@ -1,19 +1,19 @@
 MixinWrapperWidth(contentwidth, globalwidth = MixinBreakPoint(MAXPC), position = center)
-	if globalwidth == full
+	if (globalwidth == full)
 		max-width 100%
 		width percentage((contentwidth / MixinBreakPoint(MAXPC)))
 	else
 		max-width contentwidth
 		width percentage((contentwidth / globalwidth))
-	if position == center
+	if (position == center)
 		margin-right auto
 		margin-left auto
-	else if position == left
+	else if (position == left)
 		margin-right auto
-	else if positon == right
+	else if (positon == right)
 		margin-left auto
 	+sp-only()
-		if globalwidth == MixinBreakPoint(MAXPC) || (globalwidth == full)
+		if (globalwidth == MixinBreakPoint(MAXPC) || (globalwidth == full))
 			width calc(100% - 40px)
 		else
 			width 100%

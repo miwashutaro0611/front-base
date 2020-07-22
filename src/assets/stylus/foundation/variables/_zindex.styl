@@ -6,11 +6,11 @@ Z_backContent = -1
 
 zIndex(name)
 	zNumber = 0
-	if name == 'back'
+	if (name == 'back')
 		return Z_backContent
 	for contentAry in Z_allcontent
 		for contentName in contentAry
 			zNumber = zNumber + 1
-			if contentName == name
+			if (contentName == name)
 				return zNumber
 	return false
