@@ -26,18 +26,10 @@
     "webp": "rm -rf ./src/assets/img-webp && mkdir ./src/assets/img-webp && node ./script/create-webp.js"
   },
   "lint-staged": {
-    "*.pug": [
-      "yarn pug-prettier"
-    ],
-    "*.styl": [
-      "yarn commit:stylint"
-    ],
-    "*.ts": [
-      "yarn commit:eslint"
-    ],
-    "*.spec.ts": [
-      "yarn jest"
-    ]
+    "*.pug": "yarn pug-prettier",
+    "*.styl": "yarn commit:stylint",
+    "*.ts": "yarn commit:eslint",
+    "*.spec.ts": "yarn jest"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
