@@ -53,12 +53,14 @@ module.exports = merge(pages, {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: [
-                autoprefixer({
-                  grid: true,
-                  flexbox: true,
-                }),
-              ],
+              postcssOptions: {
+                plugins: [
+                  autoprefixer({
+                    grid: true,
+                    flexbox: true,
+                  }),
+                ],
+              }
             },
           },
           'stylus-loader',
