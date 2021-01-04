@@ -4,7 +4,7 @@
   "license": "UNLICENSED",
   "engines": {
     "npm": "please_use_yarn_instead",
-    "node": "12.18.1"
+    "node": "14.4.0"
   },
   "scripts": {
     "dev": "yarn start",
