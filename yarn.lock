@@ -12061,10 +12061,10 @@ vfile-location@^3.2.0:
   resolved "https://registry.yarnpkg.com/vfile-location/-/vfile-location-3.2.0.tgz#d8e41fbcbd406063669ebf6c33d56ae8721d0f3c"
   integrity sha512-aLEIZKv/oxuCDZ8lkJGhuhztf/BW4M+iHdCwglA/eWc+vtuRFJj8EtgceYFX4LRjOhCAAiNHsKGssC6onJ+jbA==
 
-viewport-extra@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/viewport-extra/-/viewport-extra-1.1.1.tgz#00e05390eb48b14da870bb551bc501b7fd8d4afe"
-  integrity sha512-mnvJ3zpCKGcG8BMHkKW9g5Rv5p/BGCyGvxReYswKDfcQSXXPRnfMEcZ7bbhyMBqwzFJyZbLe18HnC+CsG9OujQ==
+viewport-extra@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/viewport-extra/-/viewport-extra-2.0.1.tgz#aacd77c81d0498b440c86cfa8a61f4aaecfaec3c"
+  integrity sha512-beEPtXIu2SGetExgXPKwOmbNJ3E5Qu1tl8DmLCBRKYwvS9iJ2r4Kemmq8tboVryeDE+HjyFxW+caprf+FHoCDw==
 
 vm-browserify@^1.0.1:
   version "1.1.2"

@@ -83,7 +83,7 @@
     "luxy.js": "^0.1.0",
     "picturefill": "^3.0.3",
     "ua-parser-js": "^0.7.22",
-    "viewport-extra": "^1.1.1",
+    "viewport-extra": "^2.0.1",
     "what-input": "^5.2.10"
   }
 }
