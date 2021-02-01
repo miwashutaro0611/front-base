@@ -60,7 +60,7 @@ module.exports = merge(pages, {
                     flexbox: true,
                   }),
                 ],
-              }
+              },
             },
           },
           'stylus-loader',
