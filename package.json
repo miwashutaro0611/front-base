@@ -82,7 +82,7 @@
     "autoprefixer": "^10.2.4",
     "luxy.js": "^0.1.0",
     "picturefill": "^3.0.3",
-    "ua-parser-js": "^0.7.23",
+    "ua-parser-js": "^0.7.24",
     "viewport-extra": "^2.0.1",
     "what-input": "^5.2.10"
   }
