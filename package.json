@@ -21,7 +21,8 @@
     "jest": "jest",
     "test:ci": "jest -i --ci --runInBand",
     "pug-prettier": "prettier --write '**/*.pug'",
-    "webp": "rm -rf ./src/assets/img-webp && mkdir ./src/assets/img-webp && node ./script/create-webp.js"
+    "webp": "rm -rf ./src/assets/img-webp && mkdir ./src/assets/img-webp && node ./script/create-webp.js",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.pug": "yarn pug-prettier",
@@ -48,7 +49,7 @@
     "eslint-import-resolver-webpack": "^0.13.0",
     "eslint-plugin-prettier": "^3.3.1",
     "html-webpack-plugin": "^4.5.0",
-    "husky": "4.3.8",
+    "husky": "7.0.1",
     "imagemin": "^7.0.1",
     "imagemin-webp": "^6.0.0",
     "jest": "^26.6.3",
