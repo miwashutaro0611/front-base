@@ -3,8 +3,7 @@
   "private": true,
   "license": "UNLICENSED",
   "engines": {
-    "npm": "please_use_yarn_instead",
-    "node": "14.4.0"
+    "npm": "please_use_yarn_instead"
   },
   "scripts": {
     "dev": "yarn start",
