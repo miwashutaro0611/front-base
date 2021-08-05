@@ -7,3 +7,4 @@ yarn pug-prettier
 yarn commit:stylint
 yarn commit:eslint
 yarn jest
+yarn commitlint --edit $1
