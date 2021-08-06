@@ -39,8 +39,7 @@ module.exports = merge(pages, {
         use: ['ts-loader'],
       },
       {
-        test: /\.styl$/,
-        exclude: /node_modules/,
+        test: /\.scss$/,
         use: [
           { loader: 'style-loader' },
           MiniCssExtractPlugin.loader,
@@ -63,7 +62,12 @@ module.exports = merge(pages, {
               },
             },
           },
-          'stylus-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('sass'),
+            },
+          },
         ],
       },
       {
@@ -122,6 +126,6 @@ module.exports = merge(pages, {
     alias: {
       '~': resolve(appDir, 'assets'),
     },
-    extensions: ['.ts', '.js', '.styl'],
+    extensions: ['.ts', '.js', '.scss'],
   },
 })
