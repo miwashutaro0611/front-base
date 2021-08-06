@@ -1,6 +1,11 @@
 .test {
-    color: #f0f;
-    &::before {
-        content: '';
-    }
+  color: #f0f;
+  &::before {
+    display: block;
+    color: #0f0;
+    content: '';
+  }
+}
+.hoge2 {
+  display: inline;
 }
