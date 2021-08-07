@@ -1,0 +1,59 @@
+// pcの最大幅(1920px)になったら
+@mixin max-pc() {
+  @media screen and (min-width: MixinBreakPoint('MAXPC')) {
+    @content;
+  }
+}
+
+// 通常のpc用(1560px以下)
+@mixin normal-pc() {
+  @media screen and (min-width: MixinBreakPoint('PC_CONTENT')) {
+    @content;
+  }
+}
+// 通常のpc用(1280px以下)
+@mixin min-pc() {
+  @media screen and (min-width: MixinBreakPoint('PC')) {
+    @content;
+  }
+}
+
+// 通常のpcとspの切り替え(pc用)
+@mixin pc-only() {
+  @media screen and (min-width: MixinBreakPoint('TABLET')) {
+    @content;
+  }
+}
+
+// 通常のpcとspの切り替え(sp用)
+@mixin sp-only() {
+  @media screen and (max-width: MixinBreakPoint('TABLET')) {
+    @content;
+  }
+}
+
+// スマートフォンのみ別で対応したい場合(767px以下)
+@mixin min-sp() {
+  @media screen and (max-width: MixinBreakPoint('SMARTPHONE')) {
+    @content;
+  }
+}
+
+// iphone5のみ別で対応したい場合
+@mixin iphone5() {
+  @media screen and (max-width: MixinBreakPoint('SMALL')) {
+    @content;
+  }
+}
+
+// カスタムブレイクポイント
+@mixin custom-breakpoint($value, $maxmin: 'max') {
+  @if $maxmin == 'max' {
+    $maxmin: 'max';
+  } @else {
+    $maxmin: 'min';
+  }
+  @media screen and (#{$maxmin}-width: #{$value}px) {
+    @content;
+  }
+}

@@ -5,4 +5,4 @@ import '~/js/modules/what-input'
 import '~/js/modules/barba'
 import '~/js/modules/luxy'
 
-import '~/stylus/style'
+import '~/scss/style'

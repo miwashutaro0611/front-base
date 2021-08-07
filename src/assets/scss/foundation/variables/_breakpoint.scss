@@ -1,0 +1,13 @@
+$BREAK_POINT: (
+  MAXPC: 1920,
+  PC_CONTENT: 1560,
+  PC: 1280,
+  TABLET: 1023,
+  SMARTPHONE: 767,
+  SMALL: 320,
+);
+$BREAK_POINT_CUSTOM: 1180;
+
+@function MixinBreakPoint($deviceSize) {
+  @return map-get($BREAK_POINT, $deviceSize) + 'px';
+}

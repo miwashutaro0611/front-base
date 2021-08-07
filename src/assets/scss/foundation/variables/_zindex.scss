@@ -1,0 +1,21 @@
+$Z_common: header, navModel;
+$Z_top: mainMv, mainKv, mainKv2;
+$Z_about: aboutMv, aboutKv;
+$Z_allcontent: $Z_top, $Z_about, $Z_common;
+$Z_backContent: -1;
+
+@function zIndex($name) {
+  $zNumber: 0;
+  @if $name == 'back' {
+    @return $Z_backContent;
+  }
+  @each $contentAry in $Z_allcontent {
+    @each $contentName in $contentAry {
+      $zNumber: $zNumber + 1;
+      @if $contentName == $name {
+        @return $zNumber;
+      }
+    }
+  }
+  @return false;
+}

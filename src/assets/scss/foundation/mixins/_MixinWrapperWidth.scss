@@ -1,0 +1,25 @@
+@use "sass:math";
+@mixin MixinWrapperWidth($contentwidth, $globalwidth: 1920, $position: center) {
+  @if $globalwidth == 'full' {
+    width: percentage(math.div($contentwidth, 1920));
+    max-width: 100%;
+  } @else {
+    width: percentage(math.div($contentwidth, $globalwidth));
+    max-width: $contentwidth;
+  }
+  @if $position == 'center' {
+    margin-right: auto;
+    margin-left: auto;
+  } @else if $position == 'left' {
+    margin-right: auto;
+  } @else if $position == 'right' {
+    margin-left: auto;
+  }
+  @include sp-only() {
+    @if $globalwidth == MixinBreakPoint('MAXPC') or $globalwidth == 'full' {
+      width: calc(100% - 40px);
+    } @else {
+      width: 100%;
+    }
+  }
+}
