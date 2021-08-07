@@ -10,10 +10,12 @@
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint"
+    "prettier/@typescript-eslint",
+    "plugin:import/errors"
   ],
   "plugins": [
     "@typescript-eslint",
+    "import",
     "prettier"
   ],
   "globals": {
@@ -23,6 +25,8 @@
     "ga": true
   },
   "rules": {
+    "sort-imports": 0,
+    "import/order": [2, { "alphabetize": { "order": "asc" } }],
     "prettier/prettier": "error"
   },
   "parserOptions": {
