@@ -1,0 +1,17 @@
+@mixin MixinHoverAction($hoverTime: 0) {
+  @media (hover: hover) {
+    &:hover {
+      transition: #{$hoverTime}s;
+      @content;
+    }
+  }
+  @media all and (-ms-high-contrast: none) {
+    &:hover {
+      transition: #{$hoverTime}s;
+      @content;
+    }
+  }
+  &:active {
+    @content;
+  }
+}

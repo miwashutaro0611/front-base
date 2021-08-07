@@ -1,0 +1,16 @@
+.p-top {
+  z-index: zIndex('header');
+  display: flex;
+  @include MixinWrapperWidth(1280, 'full');
+  @include MixinFontSize(14, 40);
+  @include custom-breakpoint(1000) {
+    font-size: 20px;
+  }
+}
+
+.img-back {
+  width: 237px;
+  height: 153px;
+  background: url('/assets/img/sample.png');
+  background-size: cover;
+}

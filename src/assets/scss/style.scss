@@ -1,11 +1,10 @@
-.test {
-  color: #f0f;
-  &::before {
-    display: block;
-    color: #0f0;
-    content: '';
-  }
-}
-.hoge2 {
-  display: inline;
-}
+// @import './foundation/debug'
+@import './foundation/variables/*';
+@import './foundation/mixins/*';
+@import './foundation/reset';
+@import './foundation/default';
+@import './foundation/barba/*';
+@import './layout/*';
+@import './object/components/*';
+@import './object/project/*';
+@import './object/utility/*';

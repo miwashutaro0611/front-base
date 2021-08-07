@@ -1,0 +1,8 @@
+.l-header {
+  width: calc(100% - 40px);
+  margin: 0 auto;
+}
+
+.l-header__Title {
+  color: MixinColorPalette(text);
+}

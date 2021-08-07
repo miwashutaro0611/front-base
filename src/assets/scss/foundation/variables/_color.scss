@@ -1,0 +1,13 @@
+$COLOR_Palette: (
+  default: (
+    back: #fff,
+    text: #333,
+  ),
+  footer: (
+    text: #ddd,
+  ),
+);
+@function MixinColorPalette($type, $pattern: 'default') {
+  $object: map-get($COLOR_Palette, $pattern);
+  @return map-get($object, $type);
+}

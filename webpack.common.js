@@ -3,6 +3,7 @@ const { resolve, join } = require('path')
 
 const autoprefixer = require('autoprefixer')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const globImporter = require('node-sass-glob-importer')
 const CopyPlugin = require('copy-webpack-plugin')
 
 const { merge } = require('webpack-merge')
@@ -66,6 +67,9 @@ module.exports = merge(pages, {
             loader: 'sass-loader',
             options: {
               implementation: require('sass'),
+              sassOptions: {
+                importer: globImporter(),
+              },
             },
           },
         ],
