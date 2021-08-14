@@ -1,10 +1,10 @@
 /* eslint @typescript-eslint/no-var-requires: 0 */
 
+const { resolve, join } = require('path')
 const autoprefixer = require('autoprefixer')
 const CopyPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const globImporter = require('node-sass-glob-importer')
-const { resolve, join } = require('path')
 
 const { merge } = require('webpack-merge')
 const pages = require('./webpack.pages.js')

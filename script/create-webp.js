@@ -1,9 +1,9 @@
 /* eslint @typescript-eslint/no-var-requires: 0 */
 // @see https://github.com/imagemin/imagemin/issues/191
 const { lstatSync, readdirSync } = require('fs')
+const { join } = require('path')
 const imagemin = require('imagemin')
 const imageminWebp = require('imagemin-webp')
-const { join } = require('path')
 
 /**
  * @description
