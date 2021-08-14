@@ -10,7 +10,7 @@ mixin basemeta
     - MetaTitle = `${MetaTitle} | ${GlobalTitle}`
     - if (MetaDescription == '')
       - MetaDescription = `${Title}のページです。${GlobalDescription}`
-  title #{MetaTitle}
+  title #{ MetaTitle }
   meta(name='description', content=MetaDescription)
   - if (MetaNoindex)
     meta(name='robots', content='noindex,nofollow')
