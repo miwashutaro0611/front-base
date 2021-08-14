@@ -3826,9 +3826,10 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codecrumbs@^1.7.3:
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/codecrumbs/-/codecrumbs-1.7.3.tgz#643f3ba2eff997d7576f022699fbc9265379afe5"
+codecrumbs@^1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/codecrumbs/-/codecrumbs-1.8.3.tgz#6d9498ac04570ee1411f03a257635e0712c22bda"
+  integrity sha512-HZTmswTlsFLuZEni9SnDKf9r57A7VOQXzEUI6TzXnDfpQ5z1TrV5+/aNi5h+SzKSQXZquAjwaEI3kzT28GplBA==
   dependencies:
     "@babel/parser" "^7.1.2"
     "@babel/traverse" "^7.1.0"
@@ -3846,6 +3847,7 @@ codecrumbs@^1.7.3:
     lodash "^4.17.10"
     lodash.debounce "^4.0.8"
     madge "^3.4.4"
+    php-parser "^3.0.2"
     portscanner "^2.2.0"
     react "^16.8.6"
     react-dom "^16.8.6"
@@ -6195,6 +6197,11 @@ fs-minipass@^2.0.0:
   integrity sha512-V/JgOLFCS+R6Vcq0slCuaeWEdNC3ouDlJMNIsacH2VtALiu9mV4LPrHc5cDl8k5aw6J8jwgWWpiTo5RYhmIzvg==
   dependencies:
     minipass "^3.0.0"
+
+fs-readdir-recursive@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/fs-readdir-recursive/-/fs-readdir-recursive-1.1.0.tgz#e32fc030a2ccee44a6b5371308da54be0b397d27"
+  integrity sha512-GNanXlVr2pf02+sPN40XN8HG+ePaNcvM0q5mZBd668Obwb0yD5GiUbZOFgwn8kGMY6I3mdyDJzieUy3PTYyTRA==
 
 fs-write-stream-atomic@^1.0.8:
   version "1.0.10"
@@ -10137,6 +10144,11 @@ pend@~1.2.0:
 performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
+
+php-parser@^3.0.2:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/php-parser/-/php-parser-3.0.3.tgz#287779ea8a273ec5cf926f28e5f38ffa4ad32d4a"
+  integrity sha512-WjbrtYrwmLY9hpoKoq1+mVqJhT0dEVDZRWSpNIw2MpTw3VM/K4C6e0WR4KlU6G/XROkV7tpH4NesV2dDiPxqaw==
 
 picomatch@^2.0.4, picomatch@^2.0.5:
   version "2.1.1"
