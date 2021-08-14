@@ -1,3 +1,12 @@
+/**
+ * @jest-environment jsdom
+ */
+
+/**
+ * @see https://zenn.dev/sosukesuzuki/articles/560c751e62a515
+ * jest v27でのjsdomについて
+ */
+
 import UAParser from 'ua-parser-js'
 import device from '~/js/utils/device'
 
