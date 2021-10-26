@@ -30,6 +30,11 @@
     "*.ts": "yarn commit:eslint",
     "*.spec.ts": "yarn jest"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/plugin-transform-runtime": "^7.15.0",
