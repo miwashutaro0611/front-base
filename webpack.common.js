@@ -4,7 +4,6 @@ const { resolve, join } = require('path')
 const autoprefixer = require('autoprefixer')
 const CopyPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const globImporter = require('node-sass-glob-importer')
 
 const { merge } = require('webpack-merge')
 const pages = require('./webpack.pages.js')
@@ -15,7 +14,7 @@ const assetsPath = {
   jsPath: 'assets/js',
   cssPath: 'assets/css',
   imgPath: 'assets/img',
-  imgWebpPath: 'assets/img-webp',
+  imgWebpPath: 'assets/img',
   fontPath: 'assets/fonts',
   staticPath: 'static',
 }
@@ -67,9 +66,6 @@ module.exports = merge(pages, {
             loader: 'sass-loader',
             options: {
               implementation: require('sass'),
-              sassOptions: {
-                importer: globImporter(),
-              },
             },
           },
         ],

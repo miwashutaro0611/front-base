@@ -1,11 +1,12 @@
+@use "../../foundation/" as global;
 .u-is-pc {
-  @include sp-only() {
+  @include global.sp-only() {
     display: none !important;
   }
 }
 
 .u-is-sp {
-  @include pc-only() {
+  @include global.pc-only() {
     display: none !important;
   }
 }

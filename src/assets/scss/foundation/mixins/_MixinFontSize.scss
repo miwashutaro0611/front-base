@@ -1,6 +1,7 @@
+@use "../../foundation/variables" as variable;
 @use "sass:math";
 @mixin MixinFontSize($fontSize, $lineheight: 'default') {
-  $Mixinfont: math.div($fontSize, $FontSize_Default);
+  $Mixinfont: math.div($fontSize, variable.$FontSize_Default);
   $Mixinlineheigh: 1.6666;
   @if $lineheight == 'default' {
     $Mixinlineheigh: 1.6666;

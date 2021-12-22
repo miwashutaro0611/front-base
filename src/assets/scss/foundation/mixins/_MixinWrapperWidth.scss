@@ -1,3 +1,4 @@
+@use '../../foundation/mixins/mediaquery' as mediaquery;
 @use "sass:math";
 @mixin MixinWrapperWidth($contentwidth, $globalwidth: 1920, $position: center) {
   @if $globalwidth == 'full' {
@@ -15,7 +16,7 @@
   } @else if $position == 'right' {
     margin-left: auto;
   }
-  @include sp-only() {
+  @include mediaquery.sp-only() {
     @if $globalwidth == MixinBreakPoint('MAXPC') or $globalwidth == 'full' {
       width: calc(100% - 40px);
     } @else {

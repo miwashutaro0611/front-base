@@ -1,14 +1,14 @@
+@use "../foundation/" as global;
 @use "sass:math";
 html,
 body {
-  background: MixinColorPalette('back');
-  background: #fff;
+  background: global.MixinColorPalette('back');
 }
 
 body {
-  font-family: $FontFamily_Default;
-  font-size: percentage(math.div(16, $FontSize_Default));
-  color: MixinColorPalette(text);
+  font-family: global.$FontFamily_Default;
+  font-size: percentage(math.div(16, global.$FontSize_Default));
+  color: global.MixinColorPalette(text);
   text-rendering: optimizeLegibility;
 }
 

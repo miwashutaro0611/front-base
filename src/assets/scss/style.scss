@@ -1,10 +1,6 @@
-// @import './foundation/debug'
-@import './foundation/variables/*';
-@import './foundation/mixins/*';
-@import './foundation/reset';
-@import './foundation/default';
-@import './foundation/barba/*';
-@import './layout/*';
-@import './object/components/*';
-@import './object/project/*';
-@import './object/utility/*';
+// @use './foundation/debug';
+@use './foundation/reset';
+@use './foundation/default';
+@use './foundation/barba/animation';
+@use './layout';
+@use './object';
