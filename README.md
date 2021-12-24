@@ -12,7 +12,7 @@
 
 | アプリケーション名 | バージョン | 補足 |
 | --- | --- | --- |
-| [Node.js](https://nodejs.org/ja/) | 16.13.0 | |
+| [Node.js](https://nodejs.org/ja/) | 16.13.1 | |
 | [Visual Studio Code](https://code.visualstudio.com/) | | [webstorm](https://www.jetbrains.com/ja-jp/webstorm/)などの他のエディタでも可 |
 | [yarn](https://classic.yarnpkg.com/lang/en/) | 1.22.11 | npmでのインストールは非対応 |
 | [Docker Compose](https://docs.docker.com/compose/install/) | | 現在(21/12/25時点)作成中 |
