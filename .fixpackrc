@@ -1,0 +1,21 @@
+{
+  "sortToTop": [
+    "name",
+    "version",
+    "engines",
+    "author",
+    "private",
+    "repository",
+    "main",
+    "types",
+    "scripts",
+    "dependencies",
+    "peerDependencies",
+    "devDependencies",
+    "lint-staged",
+    "husky",
+    "browser",
+    "description",
+    "workspaces"
+  ]
+}
