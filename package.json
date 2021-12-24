@@ -1,39 +1,36 @@
 {
   "name": "front-base",
-  "private": true,
-  "license": "UNLICENSED",
   "engines": {
-    "npm": "please_use_yarn_instead"
+    "npm": "please_use_yarn_instead",
+    "node": "16.13.1"
   },
+  "private": true,
   "scripts": {
-    "dev": "yarn start",
-    "start": "webpack-dev-server --config webpack.dev.js",
-    "eslint": "eslint --fix --ext .js,.ts --ignore-path .gitignore .",
-    "stylelint": "stylelint --fix '**/*.{scss,css}' --ignore-path .gitignore",
-    "lint": "yarn stylelint && yarn eslint",
-    "build:develop": "yarn webp && rm -rf dist/ && webpack --config webpack.dev.js",
     "build": "rm -rf dist/ && webpack --config webpack.prod.js",
+    "build:develop": "yarn webp && rm -rf dist/ && webpack --config webpack.dev.js",
+    "create": "run-p create:*",
+    "create:webp": "rm -rf ./src/assets/img-webp && mkdir ./src/assets/img-webp && node ./script/create-webp.js",
     "deploy": "yarn webp && webpack --config webpack.prod.js && mv ._headers dist/_headers",
     "deploy:master": "yarn webp && webpack --config webpack.prod.js",
-    "commit:stylelint": "yarn stylelint",
-    "commit:eslint": "yarn eslint",
-    "codecrumbs": "codecrumbs -d src/assets/js -e src/assets/js/common.ts",
-    "jest": "jest",
-    "test:ci": "jest -i --ci --runInBand",
-    "pug-prettier": "prettier --write '**/*.pug'",
-    "webp": "rm -rf ./src/assets/img-webp && mkdir ./src/assets/img-webp && node ./script/create-webp.js",
-    "prepare": "husky install"
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "lint": "run-p lint:*",
+    "lint:js": "eslint --fix --ext .js,.ts --ignore-path .gitignore .",
+    "lint:package": "fixpack",
+    "lint:pug": "prettier --write '**/*.pug'",
+    "lint:style": "stylelint --fix '**/*.{scss,css}' --ignore-path .gitignore",
+    "test": "jest",
+    "test:ci": "jest -i --ci --runInBand"
   },
-  "lint-staged": {
-    "*.pug": "yarn pug-prettier",
-    "*.scss": "yarn commit:stylelint",
-    "*.ts": "yarn commit:eslint",
-    "*.spec.ts": "yarn jest"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "dependencies": {
+    "@barba/core": "^2.9.7",
+    "@barba/css": "^2.1.15",
+    "@barba/prefetch": "^2.1.10",
+    "autoprefixer": "^10.3.1",
+    "luxy.js": "^0.1.0",
+    "picturefill": "^3.0.3",
+    "ua-parser-js": "^0.7.28",
+    "viewport-extra": "^2.1.1",
+    "what-input": "^5.2.10"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -48,7 +45,6 @@
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
     "babel-loader": "^8.2.2",
-    "codecrumbs": "^1.8.3",
     "copy-webpack-plugin": "^6.3.2",
     "css-loader": "^5.0.1",
     "eslint": "^7.32.0",
@@ -56,6 +52,7 @@
     "eslint-import-resolver-webpack": "^0.13.1",
     "eslint-plugin-import": "^2.24.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "fixpack": "^4.0.0",
     "fs-readdir-recursive": "^1.1.0",
     "html-webpack-plugin": "^4.5.0",
     "husky": "7.0.1",
@@ -65,6 +62,7 @@
     "jest-junit": "^12.2.0",
     "lint-staged": "^11.1.2",
     "mini-css-extract-plugin": "^1.3.5",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.3.6",
     "postcss-loader": "^4.1.0",
     "prettier": "^2.3.2",
@@ -89,15 +87,16 @@
     "webpack-merge": "^5.8.0",
     "yarn": "^1.22.11"
   },
-  "dependencies": {
-    "@barba/core": "^2.9.7",
-    "@barba/css": "^2.1.15",
-    "@barba/prefetch": "^2.1.10",
-    "autoprefixer": "^10.3.1",
-    "luxy.js": "^0.1.0",
-    "picturefill": "^3.0.3",
-    "ua-parser-js": "^0.7.28",
-    "viewport-extra": "^2.1.1",
-    "what-input": "^5.2.10"
-  }
+  "lint-staged": {
+    "*.pug": "yarn lint:pug",
+    "*.scss": "yarn lint:css",
+    "*.ts": "yarn lint:js",
+    "*.spec.ts": "yarn test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "license": "UNLICENSED"
 }

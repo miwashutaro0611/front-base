@@ -1,54 +1,56 @@
-# webpackなどのコメント一覧
+# フロントエンド環境構築テスト
 
-https://jackswim3411.hatenablog.com/entry/2019/06/14/045254
+![このプロジェクトのissuesの数](https://img.shields.io/github/issues/miwashutaro0611/front-base)
+![このプロジェクトのコードサイズ](https://img.shields.io/github/languages/code-size/miwashutaro0611/front-base)
 
-# css - resetについて
+## このプロジェクトについて
 
-- https://coliss.com/articles/build-websites/operation/css/a-modern-css-reset.html
+- [pug](https://pugjs.org/api/getting-started.html) + [scss(dart-sass)](https://sass-lang.com/dart-sass) + [TypeScript](https://www.typescriptlang.org/)を使用した非SPAを考慮したページのボイラープレート。
+- 各種パッケージのアップデート + 新規ライブラリの検証用
 
-# stylus hoverの書き方
+## 環境構築
 
-- http://stylus-lang.com/docs/selectors.html#ranges-in-partial-references
+| アプリケーション名 | バージョン | 補足 |
+| --- | --- | --- |
+| [Node.js](https://nodejs.org/ja/) | 14.17.0 | |
+| [Visual Studio Code](https://code.visualstudio.com/) | | [webstorm](https://www.jetbrains.com/ja-jp/webstorm/)などの他のエディタでも可 |
+| [yarn](https://classic.yarnpkg.com/lang/en/) | 1.22.11 | npmでのインストールは非対応 |
+| [Docker Compose](https://docs.docker.com/compose/install/) | | 現在(21/12/25時点)作成中 |
 
-# pug-lintのルール一覧
+## scriptsについて
 
-https://github.com/pugjs/pug-lint/blob/master/docs/rules.md
+| script名 | description |
+| --- | --- |
+| build | ビルドの実行 |
+| create:webp | png画像などをwebp画像でも作成(現在(21/12/25時点)作成中)|
+| deploy | デプロイの実行 |
+| dev | 開発モードでの実行 |
+| lint | コードのlintチェック |
+| test | jestを実行してTypeScriptの一部のコードの検証 |
 
-# ts + jest導入
+## 過去に対応したことの記事一覧
 
-https://qiita.com/mangano-ito/items/99dedf88d972e7e631b7
+- 2019-03-22 : [pug + stylus + gulp + webpack技術選定・行っていること](https://jackswim3411.hatenablog.com/entry/2019/03/22/045610)
+- 2019-04-22 : [stylus + jsの整形ルール](https://jackswim3411.hatenablog.com/entry/2019/04/22/213248)
+- 2019-05-06 : [stylusのlintを導入](https://jackswim3411.hatenablog.com/entry/2019/05/06/023037)
+- 2019-06-14 : [自分のgulpv4 + webpackの設定](https://jackswim3411.hatenablog.com/entry/2019/06/14/045254)
+- 2019-12-12 : [tslintから@typescript-eslintに変更する](https://jackswim3411.hatenablog.com/entry/2019/12/12/105247)
+- 2020-01-13 : [gulpfile.jsからgulpfile.tsに変更する](https://jackswim3411.hatenablog.com/entry/2020/01/13/232218)
+- 2020-02-09 : [npmアップデート手順・アップデートを行ってみて](https://jackswim3411.hatenablog.com/entry/2020/02/09/155530)
+- 2020-02-28 : [pug-lintを触ってみる](https://jackswim3411.hatenablog.com/entry/2020/02/28/110000)
+- 2020-05-24 : [Gulpで動いている既存のプロジェクトをWebpackのみに変更する](https://jackswim3411.hatenablog.com/entry/2020/05/24/074447)
+- 2020-07-19 : [webpackでjsのオプション・配置場所をカスタマイズする](https://jackswim3411.hatenablog.com/entry/2020/07/19/023725)
+- 2020-08-30 : [pugを使用して、imageを管理する](https://jackswim3411.hatenablog.com/entry/2020/08/30/003725)
+- 2021-08-07 : [stylesからdart-sassに変更した時に行なったこと・コード](https://jackswim3411.hatenablog.com/entry/2021/08/07/172638)
+- 2021-12-24 : [dart-sassの@importの記載を@use, @forwordに置き換えをした時に行ったこと](https://jackswim3411.hatenablog.com/entry/2021/12/24/081645)
 
-# jest書き方
+## 開発時によく使うサイト
 
-https://qiita.com/chimame/items/e97883fd46b67529d59f#%E3%83%86%E3%82%B9%E3%83%88%E6%A7%8B%E6%96%87%E7%B7%A8
-
-# ドキュメント
-
-## pug
-
-https://pugjs.org/api/getting-started.html
-
-## stylus
-
-https://stylus-lang.com/
-
-## TypeScript
-
-https://www.typescriptlang.org/
-
-# webpack alius設定 参考リンク
-
-- [React: import時のaliasを設定するときはWebpack、TypeScript、ESLintの3つを対応しなければならない件](https://qiita.com/Statham/items/8a1161c7816e360590f3)
-- [TypeScirptのプロジェクトにエイリアスを設定して絶対パスでimportするメモ](https://nametake.github.io/posts/2019/10/07/typescript-absolute-imports/)
-- [Jestでaliasを使ったモジュール参照を扱う](https://blog.mitsuruog.info/2019/06/jest-module-name-mapper)
-
-# circleCI参考リンク
-
-- [いまさらだけどCircleCIに入門したので分かりやすくまとめてみた](https://qiita.com/gold-kou/items/4c7e62434af455e977c2)
-- [Jestを通してCircleCIの基本を確認してみる](https://dev.classmethod.jp/articles/circleci-getting-started-jest/)
-
-# barbajs参考リンク
-
-- [Barba.jsを使うときに設定しておくと便利なスニペット](https://www.willstyle.co.jp/blog/1722/)
-- [Barba.js(Pjax)でのサイト作成で学んだ9の注意点。とその解決法。](https://leap-in.com/ja/notes-when-you-use-barba-js-2/)
-- [barba.js v2で簡単に非同期画面遷移を取り入れてページ高速化！](https://notes.sharesl.net/articles/50/)
+- [html: HTMLタグの入れ子検証](https://caninclude.glitch.me/)
+- [html: ダミー画像の生成](https://placehold.jp/)
+- [css: flexboxチートシート](https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet)
+- [css: イージングチートシート](https://easings.net/ja)
+- [css: CSS三角形作成ツール](http://apps.eky.hk/css-triangle-generator/ja)
+- [scss: Playground](https://www.sassmeister.com/)
+- [js: JavaScriptのスマートな配列操作テクニック](https://ics.media/entry/200825/)
+- [ts: TypeScirpt Playground](https://www.typescriptlang.org/play)
