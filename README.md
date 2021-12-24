@@ -1,5 +1,8 @@
 # フロントエンド環境構築テスト
 
+![このプロジェクトのissuesの数](https://img.shields.io/github/issues/miwashutaro0611/front-base)
+![このプロジェクトのコードサイズ](https://img.shields.io/github/languages/code-size/miwashutaro0611/front-base)
+
 ## このプロジェクトについて
 
 - [pug](https://pugjs.org/api/getting-started.html) + [scss(dart-sass)](https://sass-lang.com/dart-sass) + [TypeScript](https://www.typescriptlang.org/)を使用した非SPAを考慮したページのボイラープレート。
