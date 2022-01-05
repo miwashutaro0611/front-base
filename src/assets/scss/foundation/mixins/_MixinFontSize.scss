@@ -1,4 +1,4 @@
-@use "../../foundation/variables" as variable;
+@use "~/scss/foundation/variables" as variable;
 @use "sass:math";
 @mixin MixinFontSize($fontSize, $lineheight: 'default') {
   $Mixinfont: math.div($fontSize, variable.$FontSize_Default);

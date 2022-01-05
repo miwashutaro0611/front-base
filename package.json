@@ -89,7 +89,7 @@
   },
   "lint-staged": {
     "*.pug": "yarn lint:pug",
-    "*.scss": "yarn lint:css",
+    "*.scss": "yarn lint:style",
     "*.ts": "yarn lint:js",
     "*.spec.ts": "yarn test",
     "package.json": "yarn lint:package"
