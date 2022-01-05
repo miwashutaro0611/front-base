@@ -14,7 +14,7 @@ const assetsPath = {
   jsPath: 'assets/js',
   cssPath: 'assets/css',
   imgPath: 'assets/img',
-  imgWebpPath: 'assets/img',
+  imgWebpPath: 'assets/img-webp',
   fontPath: 'assets/fonts',
   staticPath: 'static',
 }
