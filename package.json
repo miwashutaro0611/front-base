@@ -91,7 +91,8 @@
     "*.pug": "yarn lint:pug",
     "*.scss": "yarn lint:css",
     "*.ts": "yarn lint:js",
-    "*.spec.ts": "yarn test"
+    "*.spec.ts": "yarn test",
+    "package.json": "yarn lint:package"
   },
   "husky": {
     "hooks": {
