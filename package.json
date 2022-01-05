@@ -8,8 +8,6 @@
   "scripts": {
     "build": "yarn script:webp && rm -rf dist/ && webpack --config webpack.prod.js",
     "build:develop": "yarn script:webp && rm -rf dist/ && webpack --config webpack.dev.js",
-    "script": "run-p script:*",
-    "script:webp": "rm -rf ./src/assets/img-webp && mkdir ./src/assets/img-webp && node ./script/create-webp.js",
     "deploy": "yarn webp && webpack --config webpack.prod.js && mv ._headers dist/_headers",
     "deploy:master": "yarn webp && webpack --config webpack.prod.js",
     "dev": "yarn script:webp && webpack-dev-server --config webpack.dev.js",
@@ -18,6 +16,8 @@
     "lint:package": "fixpack",
     "lint:pug": "prettier --write '**/*.pug'",
     "lint:style": "stylelint --fix '**/*.{scss,css}' --ignore-path .gitignore",
+    "script": "run-p script:*",
+    "script:webp": "rm -rf ./src/assets/img-webp && mkdir ./src/assets/img-webp && node ./script/create-webp.js",
     "test": "jest",
     "test:ci": "jest -i --ci --runInBand"
   },
