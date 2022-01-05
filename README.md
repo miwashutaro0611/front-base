@@ -22,7 +22,7 @@
 | script名 | description |
 | --- | --- |
 | build | ビルドの実行 |
-| create:webp | png画像などをwebp画像でも作成(現在(21/12/25時点)作成中)|
+| script:webp | png画像などをwebp画像でも作成 |
 | deploy | デプロイの実行 |
 | dev | 開発モードでの実行 |
 | lint | コードのlintチェック |
