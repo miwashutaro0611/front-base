@@ -1,50 +1,52 @@
-mixin sourceImg(fileName, extension = 'png', altName = '', type = 'multi', pagePath = imgPath, pageWebpPath = imgWebpPath)
+mixin sourceImg(fileName, extension = 'png', altName = '', type = 'multi', pagePath = imgPath, pageWebpPath = imgWebpPath, pageAvifPath = imgAvifPath)
   - if (type == 'multi')
     picture
       source(
+        type='image/avif',
+        media=`(min-width:${pcSize}px)`,
+        srcset=`
+        ${pageAvifPath}${fileName}.avif
+        `
+      )
+      source(
+        type='image/avif',
+        media=`(max-width:${pcSize - 1}px)`,
+        srcset=`
+        ${pageAvifPath}${fileName}-sp.avif
+        `
+      )
+      source(
         type='image/webp',
         media=`(min-width:${pcSize}px)`,
         srcset=`
-        ${pageWebpPath}${fileName}.webp 1x,
-        ${pageWebpPath}${fileName}@2x.webp 2x
+        ${pageWebpPath}${fileName}.webp
         `
       )
       source(
         type='image/webp',
         media=`(max-width:${pcSize - 1}px)`,
         srcset=`
-        ${pageWebpPath}${fileName}-sp.webp 1x,
-        ${pageWebpPath}${fileName}-sp@2x.webp 2x
+        ${pageWebpPath}${fileName}-sp.webp
         `
       )
-      source(
-        media=`(min-width:${pcSize}px)`,
-        srcset=`
-          ${pagePath}${fileName}.${extension} 1x,
-          ${pagePath}${fileName}@2x.${extension} 2x
-        `
-      )
-      source(
-        media=`(max-width:${pcSize - 1}px)`,
-        srcset=`
-          ${pagePath}${fileName}-sp.${extension} 1x,
-          ${pagePath}${fileName}-sp@2x.${extension} 2x
-        `
-      )
+      source(media=`(min-width:${pcSize}px)`, srcset=`
+          ${pagePath}${fileName}.${extension} 1x
+        `)
+      source(media=`(max-width:${pcSize - 1}px)`, srcset=`
+          ${pagePath}${fileName}-sp.${extension}
+        `)
       img(src=`${pagePath}${fileName}.${extension}`, alt=altName)
   - else
     picture
-      source(
-        type='image/webp',
-        srcset=`
-        ${pageWebpPath}${fileName}.webp 1x,
-        ${pageWebpPath}${fileName}@2x.webp 2x
-        `
-      )
+      source(type='image/avif', srcset=`
+        ${pageAvifPath}${fileName}.avif
+        `)
+      source(type='image/webp', srcset=`
+        ${pageWebpPath}${fileName}.webp
+        `)
       img(
         srcset=`
-          ${pagePath}${fileName}.${extension} 1x,
-          ${pagePath}${fileName}@2x.${extension} 2x
+          ${pagePath}${fileName}.${extension}
         `,
         src=`${pagePath}${fileName}.${extension}`,
         alt=altName

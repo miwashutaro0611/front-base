@@ -5,7 +5,8 @@ block append variables
     var Title = 'about'
     var Description = ''
     var imgPath = `${path}assets/img/`
-    var imgWebpPath = `${path}assets/img-webp/`
+    var imgWebpPath = `${path}assets/img/webp/`
+    var imgAvifPath = `${path}assets/img/avif/`
     var Noindex = false // ページをnoindexにさせる場合true
 block content
   p.p-top アバウトページ
@@ -13,6 +14,7 @@ block content
     a(href='/') topページへ
   p imgタグ
   p
-    +sourceImg("sample", "png", 'ダミー画像')
+    +sourceImg("sample1", "jpg", 'ダミー画像1')
+    +sourceImg("sample2", "png", 'ダミー画像2', 'single')
   p 背景画像
   p.img-back
