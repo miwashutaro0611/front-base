@@ -1,4 +1,4 @@
-@use '~/scss/foundation/mixins/mediaquery' as mediaquery;
+@use '~style/foundation/mixins/mediaquery' as mediaquery;
 @use "sass:math";
 @mixin MixinWrapperWidth($contentwidth, $globalwidth: 1920, $position: center) {
   @if $globalwidth == 'full' {
