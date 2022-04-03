@@ -1,4 +1,5 @@
 @use "~/scss/foundation/" as global;
+
 .c-text {
   @include global.MixinFontSize(15);
 }

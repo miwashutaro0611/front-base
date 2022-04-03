@@ -1,4 +1,5 @@
 @use "~/scss/foundation/" as global;
+
 small {
-  color: global.MixinColorPalette('text', 'footer');
+  color: global.mixincolorpalette("text", "footer");
 }

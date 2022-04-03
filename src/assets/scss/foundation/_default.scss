@@ -1,15 +1,16 @@
 @use "~/scss/foundation/" as global;
 @use "sass:math";
+
 html,
 body {
-  background: global.MixinColorPalette('back');
+  background: global.mixincolorpalette("back");
 }
 
 body {
   font-family: global.$FontFamily_Default;
   font-size: percentage(math.div(16, global.$FontSize_Default));
-  color: global.MixinColorPalette(text);
-  text-rendering: optimizeLegibility;
+  color: global.mixincolorpalette(text);
+  text-rendering: optimizelegibility;
 }
 
 button {
@@ -27,7 +28,7 @@ main {
   height: 200vh; // スクロールするため、仮追加
 }
 
-[data-whatinput='mouse'] *:focus,
-[data-whatinput='touch'] *:focus {
+[data-whatinput="mouse"] *:focus,
+[data-whatinput="touch"] *:focus {
   outline: none;
 }

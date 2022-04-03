@@ -1,59 +1,62 @@
 @use "~/scss/foundation/variables" as variable;
+
 // pcの最大幅(1920px)になったら
 @mixin max-pc() {
-  @media screen and (min-width: variable.MixinBreakPoint('MAXPC')) {
+  @media screen and (min-width: variable.MixinBreakPoint("MAXPC")) {
     @content;
   }
 }
 
 // 通常のpc用(1560px以下)
 @mixin normal-pc() {
-  @media screen and (min-width: variable.MixinBreakPoint('PC_CONTENT')) {
+  @media screen and (min-width: variable.MixinBreakPoint("PC_CONTENT")) {
     @content;
   }
 }
+
 // 通常のpc用(1280px以下)
 @mixin min-pc() {
-  @media screen and (min-width: variable.MixinBreakPoint('PC')) {
+  @media screen and (min-width: variable.MixinBreakPoint("PC")) {
     @content;
   }
 }
 
 // 通常のpcとspの切り替え(pc用)
 @mixin pc-only() {
-  @media screen and (min-width: variable.MixinBreakPoint('TABLET')) {
+  @media screen and (min-width: variable.MixinBreakPoint("TABLET")) {
     @content;
   }
 }
 
 // 通常のpcとspの切り替え(sp用)
 @mixin sp-only() {
-  @media screen and (max-width: variable.MixinBreakPoint('TABLET')) {
+  @media screen and (max-width: variable.MixinBreakPoint("TABLET")) {
     @content;
   }
 }
 
 // スマートフォンのみ別で対応したい場合(767px以下)
 @mixin min-sp() {
-  @media screen and (max-width: variable.MixinBreakPoint('SMARTPHONE')) {
+  @media screen and (max-width: variable.MixinBreakPoint("SMARTPHONE")) {
     @content;
   }
 }
 
 // iphone5のみ別で対応したい場合
 @mixin iphone5() {
-  @media screen and (max-width: variable.MixinBreakPoint('SMALL')) {
+  @media screen and (max-width: variable.MixinBreakPoint("SMALL")) {
     @content;
   }
 }
 
 // カスタムブレイクポイント
-@mixin custom-breakpoint($value, $maxmin: 'max') {
-  @if $maxmin == 'max' {
-    $maxmin: 'max';
+@mixin custom-breakpoint($value, $maxmin: "max") {
+  @if $maxmin == "max" {
+    $maxmin: "max";
   } @else {
-    $maxmin: 'min';
+    $maxmin: "min";
   }
+
   @media screen and (#{$maxmin}-width: #{$value}px) {
     @content;
   }

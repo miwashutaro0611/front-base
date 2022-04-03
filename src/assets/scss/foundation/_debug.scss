@@ -11,12 +11,15 @@
   0% {
     outline-color: red;
   }
+
   49.9% {
     outline-color: red;
   }
+
   50% {
     outline-color: transparent;
   }
+
   100% {
     outline-color: transparent;
   }
@@ -26,12 +29,15 @@
   0% {
     outline-color: gold;
   }
+
   49.9% {
     outline-color: gold;
   }
+
   50% {
     outline-color: transparent;
   }
+
   100% {
     outline-color: transparent;
   }
@@ -39,67 +45,67 @@
 
 ul > :not(li),
 ol > :not(li) {
-  content: '<ul>タグ、<ol>タグの直下に入れられるのは<li>タグだけです';
+  content: "<ul>タグ、<ol>タグの直下に入れられるのは<li>タグだけです";
   outline: 2px solid red;
   animation: blink-red 1s infinite;
 }
 
 dl > :not(dt):not(dd):not(div) {
-  content: '<dl>タグ、タグの直下に入れられるのは<dt>,<dd>,および<div>タグだけです';
+  content: "<dl>タグ、タグの直下に入れられるのは<dt>,<dd>,および<div>タグだけです";
   outline: 2px solid red;
   animation: blink-red 1s infinite;
 }
 
 a[name] {
-  content: 'name属性はHTML5で廃止されました';
+  content: "name属性はHTML5で廃止されました";
   outline: 2px solid red;
   animation: blink-red 1s infinite;
 }
 
-a[href='javascript:void(0)'] {
-  content: '<a>タグは移動するためだけに使用するべきです';
+a[href="javascript:void(0)"] {
+  content: "<a>タグは移動するためだけに使用するべきです";
   outline: 2px solid gold;
   animation: blink-gold 1s infinite;
 }
 
-a[target='_blank']:not([rel='noreferrer noopener']) {
+a[target="_blank"]:not([rel="noreferrer noopener"]) {
   content: 'target="_blank"の場合は悪用を防ぐためにもrel="noreferrer noopener"の使用を推奨します';
   outline: 2px solid gold;
   animation: blink-gold 1s infinite;
 }
 
 img:not([alt]),
-img[alt=''] {
+img[alt=""] {
   display: block;
   outline: 2px solid gold;
   animation: blink-gold 1s infinite;
 }
 
 img:not([width]),
-img[width=''],
+img[width=""],
 img:not([height]),
-img[height=''] {
+img[height=""] {
   display: block;
   outline: 2px solid gold;
   animation: blink-gold 1s infinite;
 }
 
 :root iframe:nth-of-type(4) {
-  content: '連続して4つ以上のiframeが設置されています。iframeが複数あるとパフォーマンスに影響を与えます';
+  content: "連続して4つ以上のiframeが設置されています。iframeが複数あるとパフォーマンスに影響を与えます";
   outline: 2px solid gold;
   animation: blink-gold 1s infinite;
 }
 
 time:not([datetime]),
-time[datetime=''] {
-  content: 'datetime属性がない場合、タグ内に妥当な値が入力されていますか？';
+time[datetime=""] {
+  content: "datetime属性がない場合、タグ内に妥当な値が入力されていますか？";
   outline: 2px solid gold;
   animation: blink-gold 1s infinite;
 }
 
 time:not([datetime]) *,
-time[datetime=''] * {
-  content: 'datetime属性がない場合、タグ内に子孫要素をもってはいけません';
+time[datetime=""] * {
+  content: "datetime属性がない場合、タグ内に子孫要素をもってはいけません";
   outline: 2px solid red;
   animation: blink-red 1s infinite;
 }
@@ -114,19 +120,19 @@ marquee,
 *[bgcolor],
 *[border],
 *[background] {
-  content: '古いタグや属性が使用されています。古いタグの使用はやめ、装飾はCSSで行うようにしましょう';
+  content: "古いタグや属性が使用されています。古いタグの使用はやめ、装飾はCSSで行うようにしましょう";
   outline: 2px solid red;
   animation: blink-red 1s infinite;
 }
 
 hgroup > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
-  content: 'hgroupタグ内で許可されているのはh1～h6タグです';
+  content: "hgroupタグ内で許可されているのはh1～h6タグです";
   outline: 2px solid red;
   animation: blink-red 1s infinite;
 }
 
 table > * ~ caption {
-  content: 'capptionタグはtableタグの最初の子要素として配置しなくてはなりません';
+  content: "capptionタグはtableタグの最初の子要素として配置しなくてはなりません";
   outline: 2px solid red;
   animation: blink-red 1s infinite;
 }

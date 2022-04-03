@@ -7,7 +7,9 @@ $COLOR_Palette: (
     text: #ddd,
   ),
 );
-@function MixinColorPalette($type, $pattern: 'default') {
+
+@function MixinColorPalette($type, $pattern: "default") {
   $object: map-get($COLOR_Palette, $pattern);
+
   @return map-get($object, $type);
 }
