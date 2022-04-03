@@ -136,6 +136,7 @@ module.exports = merge(pages, {
   resolve: {
     alias: {
       '~': resolve(appDir, 'assets'),
+      'style': resolve(appDir, 'assets/scss'),
     },
     extensions: ['.ts', '.js', '.scss'],
   },
