@@ -5,14 +5,12 @@
       @content;
     }
   }
-
   @media all and (-ms-high-contrast: none) {
     &:hover {
       transition: #{$hoverTime}s;
       @content;
     }
   }
-
   &:active {
     @content;
   }

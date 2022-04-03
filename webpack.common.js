@@ -24,8 +24,8 @@ module.exports = merge(pages, {
   cache: {
     type: 'filesystem',
     buildDependencies: {
-      config: [__filename],
-    },
+      config: [__filename]
+    }
   },
   entry: {
     bundle: './assets/js/common.ts',
@@ -136,7 +136,7 @@ module.exports = merge(pages, {
   resolve: {
     alias: {
       '~': resolve(appDir, 'assets'),
-      style: resolve(appDir, 'assets/scss'),
+      'style': resolve(appDir, 'assets/scss'),
     },
     extensions: ['.ts', '.js', '.scss'],
   },

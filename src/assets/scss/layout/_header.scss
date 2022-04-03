@@ -1,10 +1,9 @@
 @use "~/scss/foundation/" as global;
-
 .l-header {
   width: calc(100% - 40px);
   margin: 0 auto;
 }
 
 .l-header__Title {
-  color: global.mixincolorpalette(text);
+  color: global.MixinColorPalette(text);
 }

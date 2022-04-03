@@ -1,12 +1,9 @@
 @use "~/scss/foundation/" as global;
-
 .p-top {
-  z-index: global.zindex("header");
+  z-index: global.zIndex('header');
   display: flex;
-
-  @include global.MixinWrapperWidth(1280, "full");
+  @include global.MixinWrapperWidth(1280, 'full');
   @include global.MixinFontSize(14, 40);
-
   @include global.custom-breakpoint(1000) {
     font-size: 20px;
   }
@@ -15,6 +12,6 @@
 .img-back {
   width: 237px;
   height: 153px;
-  background: url("/assets/img/sample.png");
+  background: url('/assets/img/sample.png');
   background-size: cover;
 }

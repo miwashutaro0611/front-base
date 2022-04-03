@@ -1,13 +1,12 @@
 @use "~/scss/foundation/" as global;
-
 .u-is-pc {
-  @include global.sp-only {
+  @include global.sp-only() {
     display: none !important;
   }
 }
 
 .u-is-sp {
-  @include global.pc-only {
+  @include global.pc-only() {
     display: none !important;
   }
 }

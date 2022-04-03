@@ -7,7 +7,7 @@ module.exports = {
     'stylelint-no-unsupported-browser-features',
     'stylelint-prettier',
   ],
-  extends: ['stylelint-config-standard-scss', 'stylelint-config-recess-order'],
+  extends: ['stylelint-config-recess-order'],
   rules: {
     'prettier/prettier': true,
     'plugin/declaration-block-no-ignored-properties': true,
@@ -21,10 +21,5 @@ module.exports = {
     'declaration-block-no-shorthand-property-overrides': true,
     'declaration-block-trailing-semicolon': 'always',
     'selector-pseudo-element-colon-notation': 'double',
-    'selector-class-pattern': null,
-    'scss/no-global-function-names': null,
-    'scss/at-mixin-pattern': null,
-    'scss/dollar-variable-pattern': null,
-    'scss/at-function-pattern': null,
   },
 }
