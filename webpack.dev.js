@@ -9,9 +9,6 @@ module.exports = merge(common, {
   devServer: {
     hot: true,
     compress: true,
-    writeToDisk: true,
-    contentBase: resolve(__dirname, 'dist'),
-    watchContentBase: true,
     port: 3000,
   },
 })

@@ -14,13 +14,19 @@ const assetsPath = {
   jsPath: 'assets/js',
   cssPath: 'assets/css',
   imgPath: 'assets/img',
-  imgWebpPath: 'assets/img',
+  imgWebpPath: 'assets/img-webp',
   fontPath: 'assets/fonts',
   staticPath: 'static',
 }
 
 module.exports = merge(pages, {
   context: appDir,
+  cache: {
+    type: 'filesystem',
+    buildDependencies: {
+      config: [__filename],
+    },
+  },
   entry: {
     bundle: './assets/js/common.ts',
     head: './assets/js/head.ts',
@@ -42,7 +48,12 @@ module.exports = merge(pages, {
         test: /\.scss$/,
         use: [
           { loader: 'style-loader' },
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false,
+            },
+          },
           {
             loader: 'css-loader',
             options: {
@@ -125,6 +136,7 @@ module.exports = merge(pages, {
   resolve: {
     alias: {
       '~': resolve(appDir, 'assets'),
+      style: resolve(appDir, 'assets/scss'),
     },
     extensions: ['.ts', '.js', '.scss'],
   },

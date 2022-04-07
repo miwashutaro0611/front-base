@@ -22,7 +22,7 @@
 | script名 | description |
 | --- | --- |
 | build | ビルドの実行 |
-| create:webp | png画像などをwebp画像でも作成(現在(21/12/25時点)作成中)|
+| script:webp | png画像などをwebp画像でも作成 |
 | deploy | デプロイの実行 |
 | dev | 開発モードでの実行 |
 | lint | コードのlintチェック |
@@ -54,3 +54,4 @@
 - [scss: Playground](https://www.sassmeister.com/)
 - [js: JavaScriptのスマートな配列操作テクニック](https://ics.media/entry/200825/)
 - [ts: TypeScirpt Playground](https://www.typescriptlang.org/play)
+- [lint: commitの接頭語のルールについて](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716#file-semantic-commit-messages-md)
