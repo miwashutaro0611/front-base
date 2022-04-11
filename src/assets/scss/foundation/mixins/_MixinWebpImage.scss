@@ -1,0 +1,17 @@
+// ## webp classes
+$webpClassName: '.is-webp';
+$noWebpClassName: '.is-no-webp';
+
+// $selector にする background-image で、webp を出し分ける
+// ※親要素に $webpClassName / $noWebpClassName が付与されることが前提
+// --------------------------------------------------------
+// $filePath      {string} 背景画像ファイルパス(assets/img以降)
+// $fileExtension {string} 背景画像拡張子
+@mixin webpBg($filePath, $fileExtension: 'jpg') {
+  #{$noWebpClassName} & {
+    background-image: url('/assets/img/#{$filePath}.#{$fileExtension}');
+  }
+  #{$webpClassName} & {
+    background-image: url('/assets/img-webp/#{$filePath}.webp');
+  }
+}
