@@ -1,5 +1,5 @@
 /**
- * webp 対応していれば target に is-webp、対応していなければ is-no-webp クラスを追加する
+ * webp 対応していれば data属性 に true 対応していなければ falseを追加する
  */
 import { supportsWebp } from '~/js/utils/supports-webp'
 
