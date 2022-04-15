@@ -6,9 +6,9 @@ import { supportsWebp } from '~/js/utils/supports-webp'
 const addWebpDetectionClass = (): void => {
   const body = document.body
   if (supportsWebp()) {
-    body.classList.add('is-webp')
+    body.setAttribute('data-webpsupport', 'true')
   } else {
-    body.classList.add('is-no-webp')
+    body.setAttribute('data-webpsupport', 'false')
   }
 }
 
