@@ -42,6 +42,7 @@
     "@prettier/plugin-pug": "^1.19.1",
     "@types/jest": "^27.4.0",
     "@types/node": "^16.11.19",
+    "@types/ua-parser-js": "^0.7.36",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "babel-loader": "^8.2.3",

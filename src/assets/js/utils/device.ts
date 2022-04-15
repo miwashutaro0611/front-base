@@ -4,12 +4,14 @@
  * https://www.npmjs.com/package/ua-parser-js
  */
 
-import UAParser from 'ua-parser-js'
+import UAParser, { IBrowser, IDevice, IOS } from 'ua-parser-js'
 
-const parser = new UAParser()
+type UAParserParam = IBrowser | IDevice | IOS
+type UAType = 'type' | 'name'
 
-const check = (parserParam: any, obj: string): string => {
-  console.dir(parserParam[obj])
+const parser: UAParser = new UAParser()
+
+const check = (parserParam: UAParserParam, obj: UAType): string => {
   return parserParam[obj]
 }
 
