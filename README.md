@@ -48,6 +48,7 @@
 
 - [html: HTMLタグの入れ子検証](https://caninclude.glitch.me/)
 - [html: ダミー画像の生成](https://placehold.jp/)
+- [html: 少しのコードで実装可能なHTML小技集](https://www.webcreatorbox.com/tech/html-tips)
 - [css: flexboxチートシート](https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet)
 - [css: イージングチートシート](https://easings.net/ja)
 - [css: CSS三角形作成ツール](http://apps.eky.hk/css-triangle-generator/ja)
