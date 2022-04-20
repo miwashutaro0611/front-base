@@ -22,7 +22,7 @@
 | script名 | description |
 | --- | --- |
 | build | ビルドの実行 |
-| script:webp | png画像などをwebp画像でも作成 |
+| script-image | png画像などを圧縮・webp作成・avif作成 |
 | deploy | デプロイの実行 |
 | dev | 開発モードでの実行 |
 | lint | コードのlintチェック |
