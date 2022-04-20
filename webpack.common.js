@@ -14,7 +14,6 @@ const assetsPath = {
   jsPath: 'assets/js',
   cssPath: 'assets/css',
   imgPath: 'assets/img',
-  imgWebpPath: 'assets/img-webp',
   fontPath: 'assets/fonts',
   staticPath: 'static',
 }
@@ -101,14 +100,11 @@ module.exports = merge(pages, {
         {
           from: assetsPath.imgPath,
           to: assetsPath.imgPath,
-        },
-      ],
-    }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: assetsPath.imgWebpPath,
-          to: assetsPath.imgWebpPath,
+          globOptions: {
+            dot: false,
+            gitignore: false,
+            ignore: ['**/img/original/**'],
+          },
         },
       ],
     }),
