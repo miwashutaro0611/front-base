@@ -1,0 +1,13 @@
+// ## webp classes
+// background-image で、webp を出し分ける
+// --------------------------------------------------------
+// $filePath      {string} 背景画像ファイルパス(assets/img以降)
+// $fileExtension {string} 背景画像拡張子
+@mixin webpBg($filePath, $fileExtension: 'jpg') {
+  [data-webpsupport='false'] & {
+    background-image: url('/assets/img/#{$filePath}.#{$fileExtension}');
+  }
+  [data-webpsupport='true'] & {
+    background-image: url('/assets/img-webp/#{$filePath}.webp');
+  }
+}

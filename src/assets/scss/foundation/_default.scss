@@ -31,3 +31,7 @@ main {
 [data-whatinput='touch'] *:focus {
   outline: none;
 }
+
+[hidden] {
+  display: none !important;
+}
