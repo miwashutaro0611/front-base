@@ -6,9 +6,9 @@
   },
   "private": true,
   "scripts": {
-    "build": "yarn script-image && rm -rf dist/ && webpack --config webpack.prod.js",
-    "build:develop": "yarn script-image && rm -rf dist/ && webpack --config webpack.dev.js",
-    "deploy": "yarn script-image && webpack --config webpack.prod.js && mv ._headers dist/_headers",
+    "build": "rm -rf dist/ && webpack --config webpack.prod.js",
+    "build:develop": "rm -rf dist/ && webpack --config webpack.dev.js",
+    "deploy": "webpack --config webpack.prod.js && mv ._headers dist/_headers",
     "deploy:master": "yarn script-image && webpack --config webpack.prod.js",
     "dev": "yarn script-image && webpack-dev-server --config webpack.dev.js",
     "lint": "run-p lint:*",
