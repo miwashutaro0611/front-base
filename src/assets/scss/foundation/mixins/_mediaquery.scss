@@ -1,4 +1,4 @@
-@use "~/scss/foundation/variables" as variable;
+@use '~/scss/foundation/variables' as variable;
 // pcの最大幅(1920px)になったら
 @mixin max-pc() {
   @media screen and (min-width: variable.MixinBreakPoint('MAXPC')) {

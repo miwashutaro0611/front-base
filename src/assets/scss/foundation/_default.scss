@@ -1,5 +1,5 @@
-@use "~/scss/foundation/" as global;
-@use "sass:math";
+@use '~/scss/foundation/' as global;
+@use 'sass:math';
 html,
 body {
   background: global.MixinColorPalette('back');
