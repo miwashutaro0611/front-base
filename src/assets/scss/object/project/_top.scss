@@ -12,6 +12,6 @@
 .img-back {
   width: 237px;
   height: 153px;
-  @include global.webpBg('sample', 'png');
+  @include global.webpBg('sample1', 'png');
   background-size: cover;
 }
