@@ -30,7 +30,7 @@
     "autoprefixer": "^10.4.4",
     "luxy.js": "^0.1.0",
     "picturefill": "^3.0.3",
-    "ua-parser-js": "^1.0.2",
+    "ua-parser-js": "^1.0.33",
     "viewport-extra": "^2.1.1",
     "what-input": "^5.2.10"
   },
